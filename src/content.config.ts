@@ -34,13 +34,25 @@ const holisticMarking = z.object({
 export const collections = {
   sessions: defineCollection({
     loader: courseNodeLoader("sessions"),
-    schema: courseNodeSchema
-      .extend({
-        week: weekSchema,
-        date: z.coerce.date(),
-        teachers: teacherRefs.optional(),
-      })
-      .loose(),
+    schema: ({ image }) =>
+      courseNodeSchema
+        .extend({
+          week: weekSchema,
+          date: z.coerce.date(),
+          teachers: teacherRefs.optional(),
+          photo: image().optional(),
+          photoAlt: z.string().trim().optional(),
+        })
+        .loose()
+        .superRefine((node, ctx) => {
+          if (node.photo && !node.photoAlt) {
+            ctx.addIssue({
+              code: "custom",
+              path: ["photoAlt"],
+              message: "describe the photo when one is supplied",
+            });
+          }
+        }),
   }),
 
   assessments: defineCollection({
@@ -57,17 +69,29 @@ export const collections = {
 
   lectures: defineCollection({
     loader: courseNodeLoader("lectures"),
-    schema: courseNodeSchema
-      .extend({
-        week: weekSchema,
-        date: z.coerce.date(),
-        teachers: teacherRefs.optional(),
-        slides: z
-          .string()
-          .regex(/^\/decks\/[a-z0-9-]+\/$/)
-          .optional(),
-      })
-      .loose(),
+    schema: ({ image }) =>
+      courseNodeSchema
+        .extend({
+          week: weekSchema,
+          date: z.coerce.date(),
+          teachers: teacherRefs.optional(),
+          slides: z
+            .string()
+            .regex(/^\/decks\/[a-z0-9-]+\/$/)
+            .optional(),
+          photo: image().optional(),
+          photoAlt: z.string().trim().optional(),
+        })
+        .loose()
+        .superRefine((node, ctx) => {
+          if (node.photo && !node.photoAlt) {
+            ctx.addIssue({
+              code: "custom",
+              path: ["photoAlt"],
+              message: "describe the photo when one is supplied",
+            });
+          }
+        }),
   }),
 
   people: defineCollection({

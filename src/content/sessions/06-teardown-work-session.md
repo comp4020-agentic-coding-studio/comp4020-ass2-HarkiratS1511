@@ -7,6 +7,8 @@ week: 6
 date: 2027-03-29
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-06.jpg
+photoAlt: A magnifying glass held in selective focus
 spec:
   - each student presents a draft artefact and tell-inventory to a small
     group and receives structured feedback against a fixed checklist before

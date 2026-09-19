@@ -8,6 +8,8 @@ week: 12
 date: 2027-05-10
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-12.jpg
+photoAlt: Empty seats in a darkened cinema
 related:
   - sessions/12-capstone-work-session
   - week-09

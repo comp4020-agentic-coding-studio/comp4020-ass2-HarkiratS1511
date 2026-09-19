@@ -7,6 +7,8 @@ week: 2
 date: 2027-03-01
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-02.jpg
+photoAlt: An extreme close-up of a human eye
 spec:
   - you produce a timestamped tell-log for at least one specimen, naming at
     least three distinct tell categories from the lecture

@@ -7,6 +7,8 @@ week: 10
 date: 2027-04-26
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-10.jpg
+photoAlt: An investigation board with photos, maps and string connecting them
 related:
   - sessions/10-story-bible
   - week-11

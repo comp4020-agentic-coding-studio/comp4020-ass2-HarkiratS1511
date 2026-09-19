@@ -7,6 +7,8 @@ week: 4
 date: 2027-03-15
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-04.jpg
+photoAlt: An IT technician working among server racks in a data centre
 related:
   - sessions/04-economics-of-volume
   - week-03

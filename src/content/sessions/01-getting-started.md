@@ -7,6 +7,8 @@ week: 1
 date: 2027-02-22
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-01.jpg
+photoAlt: A clapperboard held up on a film set, marking a take
 spec:
   - you have contributed at least one AI-generated video to the shared
     specimen shelf, as a link to the artefact itself, not a screenshot of it

@@ -6,12 +6,24 @@ import { formatCourseDate } from "../lib/dates";
 
 const sessions = await getPublishedCollection("sessions");
 const visible = sessions.sort((a, b) => a.data.week - b.data.week);
+
+// photoAlt rides the schema's passthrough, so it needs a cast out of the generated types.
+function photoAlt(data: unknown): string | undefined {
+  const alt = (data as { photoAlt?: unknown }).photoAlt;
+  return typeof alt === "string" ? alt : undefined;
+}
 ---
 
 <CardGrid columns={2}>
   {
     visible.map((session) => (
-      <Card headingLevel="h2" title={session.data.title} href={`/sessions/${session.id}/`}>
+      <Card
+        headingLevel="h2"
+        title={session.data.title}
+        href={`/sessions/${session.id}/`}
+        image={session.data.photo ?? undefined}
+        imageAlt={photoAlt(session.data)}
+      >
         {session.data.description && <p>{session.data.description}</p>}
         <p>
           <small>Week {session.data.week} · {formatCourseDate(session.data.date)}</small>

@@ -7,6 +7,8 @@ week: 8
 date: 2027-04-12
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-08.jpg
+photoAlt: Shelving units in a warehouse
 spec:
   - a single prompt template exists with at least three named slots
   - the same template is instantiated into five distinct filled prompts

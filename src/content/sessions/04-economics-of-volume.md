@@ -7,6 +7,8 @@ week: 4
 date: 2027-03-15
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-04.jpg
+photoAlt: An IT technician working among server racks in a data centre
 spec:
   - you produce a worksheet with a specific cost-per-video estimate and a
     specific break-even view count for two different content archetypes, not

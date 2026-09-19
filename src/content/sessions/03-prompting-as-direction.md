@@ -7,6 +7,8 @@ week: 3
 date: 2027-03-08
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-03.jpg
+photoAlt: A director reviewing footage on a monitor
 spec:
   - you produce a shot list of at least three prompts covering a single scene,
     each specifying a distinct shot type or camera move

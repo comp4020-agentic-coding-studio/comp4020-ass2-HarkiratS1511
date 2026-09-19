@@ -7,6 +7,8 @@ week: 9
 date: 2027-04-19
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-09.jpg
+photoAlt: A laptop displaying a stock exchange graph
 related:
   - sessions/09-pipeline-work-session
   - week-07

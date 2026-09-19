@@ -8,6 +8,8 @@ week: 3
 date: 2027-03-08
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-03.jpg
+photoAlt: A director reviewing footage on a monitor
 related:
   - sessions/03-prompting-as-direction
   - week-02

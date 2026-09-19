@@ -7,6 +7,8 @@ week: 12
 date: 2027-05-10
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-12.jpg
+photoAlt: Empty seats in a darkened cinema
 spec:
   - the submitted piece runs 3 to 5 minutes, or is a trailer plus at least
     two linked promotional cuts

@@ -7,6 +7,8 @@ week: 9
 date: 2027-04-19
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-09.jpg
+photoAlt: A laptop displaying a stock exchange graph
 spec:
   - the submitted pipeline names an input source, a template with named
     slots, a batching or cull rule and a distribution schedule

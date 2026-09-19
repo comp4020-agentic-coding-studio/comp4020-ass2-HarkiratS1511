@@ -7,6 +7,8 @@ week: 7
 date: 2027-04-05
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-07.jpg
+photoAlt: A factory production line
 related:
   - sessions/07-map-the-pipeline
   - week-08

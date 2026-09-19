@@ -7,6 +7,8 @@ week: 7
 date: 2027-04-05
 teachers:
   - marisol-quaye
+photo: ../../assets/images/weeks/week-07.jpg
+photoAlt: A factory production line
 spec:
   - a pipeline diagram names at least one input source, three generation
     steps and one rejection or review gate

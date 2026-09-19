@@ -7,6 +7,8 @@ week: 6
 date: 2027-03-29
 teachers:
   - idris-fenn
+photo: ../../assets/images/weeks/week-06.jpg
+photoAlt: A magnifying glass held in selective focus
 related:
   - sessions/06-teardown-work-session
   - week-05

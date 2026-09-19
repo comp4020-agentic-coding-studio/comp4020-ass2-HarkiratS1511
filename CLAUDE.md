@@ -36,6 +36,61 @@ lands:
 - A page that could belong to any course (find-and-replace COMP4020) is a
   failure of this brief regardless of whether the build is green.
 
+## Course design, locked
+
+`AI Slop Cinematography` (`SLOP2758`). One idea: AI-generated video is a genre
+with its own tells, economics and ethics, taught the way film school teaches
+melodrama. Weekly "Studio" (hands-on production lab) plus "Lecture"
+(theory/history/case-study) across 12 weeks. Three assessments, deliberately
+weighted toward making over analysing:
+
+- **Slop Teardown** (25%, wk 6) --- critical analysis of a real slop artefact.
+  The one deliberate analysis piece, kept for contrast; don't dilute it into a
+  making exercise.
+- **Slop Pipeline** (25%, wk 9) --- diagram/build the automation logic
+  (n8n-style workflow, prompt templates, a scheduling plan) that could pump out
+  one slop archetype at scale, plus the economics case for running it.
+- **Direct a Slop Feature** (50%, wk 12, capstone) --- a sustained 3--5 minute
+  slop narrative (or a trailer plus linked promotional cuts) committed to one
+  story, one visual language, one genre for its full runtime, plus a director's
+  statement. The difficulty is sustained coherence across linked pieces, not
+  runtime --- don't let this drift back into "make one clip."
+
+### Voice
+
+Deadpan academic seriousness applied to something absurd --- the *Calling
+Bullshit* register, not marketing copy. Concretely:
+
+- No "in today's digital landscape," no LinkedIn-core enthusiasm, no hedged
+  filler transitions. Every page should sound like someone with an actual,
+  arguable opinion about slop wrote it.
+- Specific over generic: name real tells (six-fingered hands, morphing logos,
+  the too-smooth AI voiceover cadence), not "various visual artifacts."
+- Read new content next to the pages around it before accepting it. A page
+  that could belong to any course (COMP4020 with slop swapped in) is a failure
+  of the brief regardless of whether the build is green.
+
+### Art direction: deliberate, not lazy
+
+This environment has no image-generation tool, so the "AI-slop" visual look is
+hand-authored SVG/CSS (displacement filters, chromatic aberration, morphing
+gradients, deliberate "tells") rather than actual model output. This is a
+curatorial choice --- slop-aesthetic-as-commentary, produced deliberately --- and
+`PROCESS.md` must say so explicitly, or it reads as the "starter with nouns
+swapped" failure mode the rubric warns about.
+
+## Orchestration workflow
+
+Content and code for this build are drafted by dispatched subagents working
+from this file's voice guide, never accepted on their own report:
+
+- Course-wide coherence (the actual brief) is checked by reading all content
+  together, by me, after subagents draft it --- not delegated, because voice
+  drift across 12 weeks is exactly what a per-week subagent can't see.
+- A subagent reporting "pnpm check green" is necessary, not sufficient (see
+  Assignment 1 below) --- independent re-verification, including looking at
+  real screenshots, happens before anything is committed.
+
 ## PROCESS.md carries 45% of the grade
 
 Write it as you go, not as a wrap-up:

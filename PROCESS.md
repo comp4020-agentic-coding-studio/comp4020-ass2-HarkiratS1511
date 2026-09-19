@@ -64,3 +64,42 @@ a subagent's own "checks pass" report: real headless-Chromium screenshots at
 both marking viewports, not just the JSDOM build, and commits staged only
 once each verified phase held
 ([`e9f9e9b...bf132f5`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/compare/e9f9e9b...bf132f5)).
+
+## Refining content and visuals under direct request, without adding sourced or generated imagery
+
+A later request asked for two things at once: fact-check and tighten the
+writing, and make the site look less like a wall of text. The second push
+toward "more images" made the earlier no-generated-imagery stance
+([`0c77b05`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/0c77b05))
+worth re-litigating rather than just re-asserting — but the argument still
+holds even under direct pressure to add more visuals: a course whose whole
+thesis is that generated or scraped imagery is dishonest can't illustrate
+itself with either without undercutting its own claim. So the visual work
+stayed hand-authored SVG, extended rather than replaced: a reusable
+`SlopDivider` and a small `TellIcon` set (six-fingered hand, morphing logo,
+overcorrected smile, blink cadence) in the same displacement-filter register
+as the existing home-page art, wired inline next to the exact prose that
+already names each tell rather than standing in as independent content,
+plus a new `/specimens/` page giving the recurring invented case studies
+(Everline Gadget Reviews, Halcyon Devotional Renders, Nightshade & Nectar,
+Radiant Smile Dental Co., Bright Aperture, Marlowe Vance) an illustrated
+still each — no new facts, every sentence traces to a lecture already
+written
+([`658d21f`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/658d21f),
+[`1ea2196`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/1ea2196)).
+
+The fact-check half surfaced a real bug, not just a wording problem: the
+policies page's academic-integrity section had its logic inverted, describing
+disclosed AI use as the violation rather than the concealment
+([`c8bfd82`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/c8bfd82)).
+The rest of the fact-check pass was about confidence calibration, not
+invention: a handful of real-world-adjacent claims (the "slop" coinage
+timeline, Demand Media's per-article rates, TikTok/YouTube algorithm
+folklore, ad-rate figures) were stated with the same flat certainty as the
+course's own deliberately-invented numbers, so I had subagents verify each
+against real sources and either correct it or explicitly reframe it as
+"widely believed" rather than fact — leaving the invented specimen numbers
+alone, since those were never meant to read as verifiable in the first
+place
+([`ff18288`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/ff18288),
+[`e19e549`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/e19e549)).

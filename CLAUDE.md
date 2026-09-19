@@ -79,6 +79,15 @@ curatorial choice --- slop-aesthetic-as-commentary, produced deliberately --- an
 `PROCESS.md` must say so explicitly, or it reads as the "starter with nouns
 swapped" failure mode the rubric warns about.
 
+Real photography, sourced from Pexels/Unsplash only, sits *alongside* that
+invented artefact work (specimens page, home page roadmap, week photos,
+people portraits --- see `IMAGE_CREDITS.md`) --- never generated, never
+standing in as evidence for something invented. This isn't a walk-back of the
+no-generated-imagery stance: the real photo is always paired with, or
+labelled next to, the invented thing it isn't, so the pairing demonstrates
+the real-vs-fake argument instead of blurring it. Never source or generate an
+image that could pass as one of the course's own invented artefacts.
+
 ## Orchestration workflow
 
 Content and code for this build are drafted by dispatched subagents working

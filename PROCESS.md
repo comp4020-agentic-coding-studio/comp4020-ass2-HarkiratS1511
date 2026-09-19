@@ -103,3 +103,66 @@ alone, since those were never meant to read as verifiable in the first
 place
 ([`ff18288`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/ff18288),
 [`e19e549`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/e19e549)).
+
+## Reversing the no-sourced-imagery stance, deliberately
+
+A later request repeated the "make it inviting" push, more explicitly this
+time: real photos, not just more hand-authored SVG, and a home page built
+to make a visitor want to explore rather than just read. Taken alone, adding
+real photography looks like a walk-back of the position recorded above —
+that a course arguing generated/scraped imagery is dishonest shouldn't
+illustrate itself with either. It isn't, and the distinction is the point:
+that stance was about imagery standing in *as evidence* for something
+invented. Real photography of a genuinely real dental office, a genuinely
+real server room, a genuinely real film set — placed *next to* the invented
+specimen it isn't, captioned as what it is — doesn't blur that line, it
+demonstrates it. The course's real-vs-fake argument becomes something a
+visitor sees, not just something the prose asserts.
+
+Sourced from Pexels and Unsplash only (free commercial and personal use, no
+attribution legally required, no licensing risk once the repo goes public)
+— never AI-generated, which stays exactly as off-limits as before. Four
+sub-passes: the specimens page paired each of its six invented artefacts
+with the real thing it parodies and rebuilt its progressive-disclosure
+"tells" as a keyboard-operable `TellReveal` component instead of six more
+printed paragraphs
+([`d41fb13`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/d41fb13));
+every week's lecture and its matching studio session picked up one shared,
+thematically matched photo
+([`ba1851d`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/ba1851d));
+the home page gained a photographed four-act course roadmap right after the
+hero, plus a `TellReveal` teaser linking through to the specimens page, so a
+visitor can see the whole course's shape and click into any part of it
+within seconds of landing
+([`693d4b4`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/693d4b4));
+and the two course-staff profiles picked up generic professional-headshot
+portraits, deliberately chosen not to read as any specific identifiable real
+person
+([`ed53ee1`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/ed53ee1)).
+Each photo's photographer and source URL is recorded in `IMAGE_CREDITS.md`
+— not required by either license, but consistent with a course whose own
+ethics section is about disclosure rather than permission.
+
+The same request also named a second, separate problem: the specimens
+page's six paragraphs were structurally identical (tag line, three-to-four
+sentences, a tidy analytical clincher, repeated six times) — correct after
+the fact-check pass above, but not something a human editor would ever
+write. Fixing that was a rhythm rewrite, not a re-verification: paragraph
+length and clincher placement now vary specimen to specimen, with a couple
+of genuine asides in the same deadpan register, and every fact was
+re-checked against its cited lecture during the rewrite specifically so
+restyling a sentence couldn't quietly drift the claim inside it
+([`d41fb13`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/d41fb13)).
+
+Verification followed the same discipline as every prior pass, extended to
+photography-specific checks that don't exist for prose: every downloaded
+photo was opened and read against its own `alt` text, not just trusted from
+a subagent's report — this caught one already-committed alt text describing
+a pose the photo didn't show, fixed before commit. `pnpm check` ran fresh
+after all three parallel Phase 2 sub-parts landed on disk together,
+specifically to confirm the schema change powering the week photos didn't
+break anything the roadmap or people-portrait changes depended on. Real
+headless-Chromium screenshots at both marking viewports plus
+`prefers-reduced-motion: reduce` checked for layout overflow from the new
+images, and a keyboard-only pass (`Tab` then `Enter`, not a click) confirmed
+the new home-page `TellReveal` hook opens and closes without a mouse.

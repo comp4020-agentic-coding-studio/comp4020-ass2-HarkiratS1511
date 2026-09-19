@@ -7,8 +7,10 @@ week: 6
 date: 2027-03-29
 teachers:
   - idris-fenn
-photo: ../../assets/images/weeks/week-06.jpg
-photoAlt: A magnifying glass held in selective focus
+photo: ../../assets/images/sessions/week-06.jpg
+photoAlt:
+  Three people in business attire gesturing and talking animatedly around a
+  small table with coffee cups
 spec:
   - each student presents a draft artefact and tell-inventory to a small
     group and receives structured feedback against a fixed checklist before

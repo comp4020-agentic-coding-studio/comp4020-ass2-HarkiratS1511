@@ -7,8 +7,10 @@ week: 7
 date: 2027-04-05
 teachers:
   - marisol-quaye
-photo: ../../assets/images/weeks/week-07.jpg
-photoAlt: A factory production line
+photo: ../../assets/images/sessions/week-07.jpg
+photoAlt:
+  A hand draws circled labels and connecting arrow lines with a marker on a
+  glass whiteboard covered in diagram notes
 spec:
   - a pipeline diagram names at least one input source, three generation
     steps and one rejection or review gate

@@ -36,10 +36,10 @@ One photo per act on the home page.
 | `systems-production.jpg` | Frans van Heerden | [pexels.com/photo/13974251](https://www.pexels.com/photo/factory-production-line-13974251/) — same file reused for `week-07.jpg` below |
 | `coherence-capstone.jpg` | Fuka jaz | [pexels.com/photo/31718971](https://www.pexels.com/photo/professional-video-editing-interface-on-computer-screen-31718971/) |
 
-## Weekly lectures and studio sessions (`src/assets/images/weeks/`)
+## Weekly lectures (`src/assets/images/weeks/`)
 
-One photo per week, shared between that week's lecture and its matching
-studio session.
+One photo per week. Studio sessions for the same week use a different photo
+(see the next section) so the two page types don't look interchangeable.
 
 | File | Photographer | Source |
 |---|---|---|
@@ -55,6 +55,28 @@ studio session.
 | `week-10.jpg` | cottonbro studio | [pexels.com/photo/8369512](https://www.pexels.com/photo/investigation-board-with-photos-maps-and-cutouts-showing-connections-8369512/) |
 | `week-11.jpg` | Thirdman | [pexels.com/photo/8470836](https://www.pexels.com/photo/a-person-signing-a-contract-8470836/) |
 | `week-12.jpg` | Tima Miroshnichenko | [pexels.com/photo/7991436](https://www.pexels.com/photo/empty-seats-of-the-cinema-7991436/) |
+
+## Studio sessions (`src/assets/images/sessions/`)
+
+One photo per week, deliberately distinct from that week's lecture photo
+above — same subject area, different image, so a visitor looking at a
+lecture and its matching studio session sees two different photos rather
+than one file doing double duty.
+
+| File | Photographer | Source |
+|---|---|---|
+| `week-01.jpg` | Vitaly Gariev | [unsplash.com/photos/kp7qkHTgSKc](https://unsplash.com/photos/diverse-group-of-students-gathered-around-laptop-kp7qkHTgSKc) |
+| `week-02.jpg` | Fiona Murray-deGraaff | [unsplash.com/photos/6Wa3JQD385E](https://unsplash.com/photos/a-person-writing-on-a-notebook-with-a-pencil-6Wa3JQD385E) |
+| `week-03.jpg` | Ron Lach | [pexels.com/photo/8085954](https://www.pexels.com/photo/woman-filling-storyboard-in-8085954/) |
+| `week-04.jpg` | Jakub Żerdzicki | [unsplash.com/photos/8wLZi9OhsWU](https://unsplash.com/photos/a-calculator-sitting-on-top-of-a-table-next-to-a-laptop-8wLZi9OhsWU) |
+| `week-05.jpg` | Harper Sunday | [unsplash.com/photos/RmQWqLKsVv8](https://unsplash.com/photos/a-bunch-of-pictures-that-are-on-a-table-RmQWqLKsVv8) |
+| `week-06.jpg` | Vitaly Gariev | [unsplash.com/photos/o6L21ia2JSE](https://unsplash.com/photos/a-group-of-people-sitting-around-a-table-talking-o6L21ia2JSE) |
+| `week-07.jpg` | Kvalifik | [unsplash.com/photos/5Q07sS54D0Q](https://unsplash.com/photos/person-writing-on-glass-whiteboard-with-diagrams-5Q07sS54D0Q) |
+| `week-08.jpg` | Arif Riyanto | [unsplash.com/photos/G1N9kDHqBrQ](https://unsplash.com/photos/person-coding-in-modern-workspace-G1N9kDHqBrQ) |
+| `week-09.jpg` | CoWomen | [unsplash.com/photos/7Zy2KV76Mts](https://unsplash.com/photos/three-women-sitting-around-table-using-laptops-7Zy2KV76Mts) |
+| `week-10.jpg` | Mika Baumeister | [unsplash.com/photos/PtabTe6iJ_8](https://unsplash.com/photos/color-fan-deck-with-paper-swatches-PtabTe6iJ_8) |
+| `week-11.jpg` | Gabriel Cox | [unsplash.com/photos/6e7F96dBlAA](https://unsplash.com/photos/an-open-notebook-with-a-pen-on-a-wooden-desk-6e7F96dBlAA) |
+| `week-12.jpg` | Vitaly Gariev | [unsplash.com/photos/TnoFfF45eeA](https://unsplash.com/photos/people-collaborating-in-creative-workspace-TnoFfF45eeA) |
 
 ## People (`src/assets/images/people/`)
 

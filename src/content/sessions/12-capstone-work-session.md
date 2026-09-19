@@ -7,8 +7,10 @@ week: 12
 date: 2027-05-10
 teachers:
   - idris-fenn
-photo: ../../assets/images/weeks/week-12.jpg
-photoAlt: Empty seats in a darkened cinema
+photo: ../../assets/images/sessions/week-12.jpg
+photoAlt:
+  Overhead view of five colleagues around a table covered in colour
+  swatches, charts, coffee cups and a laptop, in a creative studio
 spec:
   - the submitted piece runs 3 to 5 minutes, or is a trailer plus at least
     two linked promotional cuts

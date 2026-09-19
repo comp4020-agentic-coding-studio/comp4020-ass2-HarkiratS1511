@@ -143,6 +143,14 @@ Each photo's photographer and source URL is recorded in `IMAGE_CREDITS.md`
 — not required by either license, but consistent with a course whose own
 ethics section is about disclosure rather than permission.
 
+A follow-up request asked for lecture and studio-session pages to stop
+sharing one photo per week, since a visitor landing on both saw the same
+image twice and the pages read as duplicates of each other. Sessions kept
+`src/assets/images/weeks/` for lectures and picked up a second, parallel
+`src/assets/images/sessions/` directory with a differently sourced photo
+per week, same thematic match, same Pexels/Unsplash-only sourcing and
+per-photo verification discipline as above.
+
 The same request also named a second, separate problem: the specimens
 page's six paragraphs were structurally identical (tag line, three-to-four
 sentences, a tidy analytical clincher, repeated six times) — correct after

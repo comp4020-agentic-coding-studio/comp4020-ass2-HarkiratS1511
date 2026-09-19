@@ -7,8 +7,10 @@ week: 11
 date: 2027-05-03
 teachers:
   - marisol-quaye
-photo: ../../assets/images/weeks/week-11.jpg
-photoAlt: A person signing a contract
+photo: ../../assets/images/sessions/week-11.jpg
+photoAlt:
+  An open spiral notebook filled with handwritten reflective notes, a pen
+  resting across the page, on a dark wooden desk
 spec:
   - a director's statement of 300 to 500 words states intent, names the
     process actually used, and includes one paragraph on the piece's

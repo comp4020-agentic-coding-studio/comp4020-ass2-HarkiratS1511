@@ -7,8 +7,10 @@ week: 8
 date: 2027-04-12
 teachers:
   - idris-fenn
-photo: ../../assets/images/weeks/week-08.jpg
-photoAlt: Shelving units in a warehouse
+photo: ../../assets/images/sessions/week-08.jpg
+photoAlt:
+  A person viewed from behind, working at dual monitors showing a code
+  editor with a file tree and source code open
 spec:
   - a single prompt template exists with at least three named slots
   - the same template is instantiated into five distinct filled prompts

@@ -7,8 +7,10 @@ week: 10
 date: 2027-04-26
 teachers:
   - idris-fenn
-photo: ../../assets/images/weeks/week-10.jpg
-photoAlt: An investigation board with photos, maps and string connecting them
+photo: ../../assets/images/sessions/week-10.jpg
+photoAlt:
+  A fanned-out deck of Pantone colour swatch cards arranged in a spectrum
+  from yellow through blue to red
 spec:
   - a one-to-two page story bible states a fixed colour or lighting rule, a
     character or seed consistency method, and one recurring motif

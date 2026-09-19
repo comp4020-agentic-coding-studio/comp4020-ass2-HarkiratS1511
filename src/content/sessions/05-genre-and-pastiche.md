@@ -7,8 +7,10 @@ week: 5
 date: 2027-03-22
 teachers:
   - marisol-quaye
-photo: ../../assets/images/weeks/week-05.jpg
-photoAlt: A stack of vintage box-style television sets
+photo: ../../assets/images/sessions/week-05.jpg
+photoAlt:
+  A scattered pile of printed photographs — fashion shots, a landscape,
+  jewellery — spread across a woven rattan surface for comparison
 spec:
   - you commit to one named sub-genre for the full exercise rather than
     blending two

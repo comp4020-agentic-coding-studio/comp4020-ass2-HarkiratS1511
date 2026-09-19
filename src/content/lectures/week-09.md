@@ -27,12 +27,19 @@ confirms per-render cost anyway, which is itself worth noticing. Assume a
 render costs on the order of forty cents of rented GPU time for an
 eight-second clip, that Halcyon's cull rule keeps one render in twelve, and
 that Halcyon posts around eighty finished shorts a day across four accounts.
-That's roughly a thousand renders a day to get eighty survivors — on the
-order of four hundred dollars in generation cost for outputs that, at
-typical short-form ad rates in the low cents per thousand views, need
-something like two to three million cumulative views a day just to break
-even before anyone's paid. Halcyon's accounts each sit in the high
-hundred-thousands of followers. The arithmetic works, but only just, and only
+That's roughly a thousand renders a day to get eighty survivors, on the order
+of four hundred dollars in generation cost.
+
+:::tip[The break-even line]
+At the ad-revenue-share rates creators actually report for short-form
+video — commonly quoted in low cents per thousand views, an order of
+magnitude below what advertisers themselves pay for the inventory — those
+eighty survivors need something like two to three million cumulative views a
+day just to break even, before anyone's paid for their time.
+:::
+
+Halcyon's accounts each sit in the high hundred-thousands of followers. The
+arithmetic works, but only just, and only
 because generation cost keeps falling faster than ad rates do — which is the
 actual economic engine of the genre: not that AI video is good enough yet,
 but that it's cheap enough that "good enough" gets redefined downward every

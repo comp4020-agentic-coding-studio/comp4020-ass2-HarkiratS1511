@@ -27,11 +27,14 @@ has four stages: a scraper pulls a verse and a mood tag; an LLM writes a
 sixty-word reflection keyed to the mood tag; a TTS pass reads it over a stock
 b-roll prompt; a moderator glances at a thumbnail grid before the batch posts.
 That fourth stage is the whole of Halcyon's editorial judgement, and it was
-built to catch extra fingers in the b-roll, not the citation. In March a batch
-shipped attributing a verse to the wrong book eleven thousand times before a
-viewer's comment corrected it — not because eleven thousand people watched the
-reflection carefully, but because the correction thread outperformed the
-original post.
+built to catch extra fingers in the b-roll, not the citation.
+
+:::tip[The number that mattered]
+In March, a Halcyon batch attributed a verse to the wrong book eleven
+thousand times before anyone caught it — not because eleven thousand people
+watched the reflection carefully, but because the correction thread
+outperformed the original post.
+:::
 
 ## Why the pipeline framing matters
 

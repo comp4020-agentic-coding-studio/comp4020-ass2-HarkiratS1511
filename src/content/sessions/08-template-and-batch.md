@@ -42,8 +42,9 @@ and state, in one paragraph, what percentage of a batch you'd expect to
 survive it, and why that number isn't 100%.
 
 Finish with the scheduling plan: name your target platforms (TikTok's queue
-rewards near-daily posting; YouTube Shorts tolerates burstier upload
-patterns; a Discord server wants irregular drops timed to events) and state a
+is widely believed among creators to reward near-daily posting; YouTube
+Shorts is thought to tolerate burstier upload patterns; a Discord server
+wants irregular drops timed to events) and state a
 cadence — posts per day, per platform — that a template-and-batch system like
 yours could actually sustain without a human touching every post.
 

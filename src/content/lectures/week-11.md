@@ -34,9 +34,14 @@ synthetic. Take Marlowe Vance, a fully synthetic lead used across several
 unrelated slop productions over the last two years, built from a voice and
 likeness model whose training data has never been fully disclosed and is
 widely assumed to include a deceased character actor's unlicensed archival
-footage — the tell, for anyone looking, is a blink cadence about four frames
-too slow and too even to be a real eyelid, the same "too-smooth" uncanniness
-this course named in AI voiceover back in week one, just relocated to a face.
+footage.
+
+:::warning[The tell]
+Marlowe Vance's blink cadence runs about four frames too slow and too even to
+be a real eyelid — the same "too-smooth" uncanniness this course named in AI
+voiceover back in week one, just relocated to a face.
+:::
+
 A director's statement that credits "Marlowe Vance" as a performer without
 addressing where that likeness came from is doing exactly the laundering work
 described above, on a subject where laundering is not a neutral rhetorical
@@ -45,12 +50,19 @@ quietly implies consent nobody obtained.
 
 ## What a disclosure rule actually forces
 
-Festival and distribution frameworks are starting to force the issue
-mechanically rather than trust the statement to volunteer it: a
-synthetic-content disclosure line, required on the submission form rather
-than buried in the statement's third paragraph, exists precisely because the
-genre's paratexts can't be trusted to self-report. The Tri-State Automated
-Media Festival's disclosure rule — a mandatory one-line statement, checked
+This isn't a hypothetical the genre might one day face; real festivals and
+at least one legislature got there first. Cannes now excludes work where
+generative AI drives the script, the image generation, or the lead
+performance from its main competition, on the stated grounds that such a
+film "is not an assembly of data" but requires a person behind it; New York
+became the first U.S. state to legally require advertisers to disclose a
+synthetic performer's presence in an ad. Festival and distribution
+frameworks, in other words, are starting to force the issue mechanically
+rather than trust the statement to volunteer it: a synthetic-content
+disclosure line, required on the submission form rather than buried in the
+statement's third paragraph, exists precisely because the genre's paratexts
+can't be trusted to self-report. The fictional Tri-State Automated Media
+Festival's disclosure rule — a mandatory one-line statement, checked
 for the phrase "synthetic performer" or "synthetic likeness" wherever a
 credited performer wasn't filmed — is a blunt instrument, and directors have
 already learned to satisfy its letter (the phrase appears) while defeating

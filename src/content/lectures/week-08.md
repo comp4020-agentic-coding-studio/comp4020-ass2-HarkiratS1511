@@ -34,18 +34,24 @@ only judgement that touches them.
 
 ## Platforms impose their own scheduling logic on top of the batch
 
-TikTok's recommender rewards near-daily consistency from an account more than
-it rewards any single video's quality, which is why devotional-slop accounts
-post on a fixed clock rather than "when something good is ready" — the
-schedule is upstream of the content, not downstream of it. YouTube Shorts
-tolerates burstier patterns; a paid Discord server for a niche slop serial
-wants irregular drops timed to a server event, because that audience is
-buying anticipation, not volume. A pipeline built for one platform's cadence
-and pointed at another without adjustment is why you sometimes see the same
-Halcyon renders reposted to YouTube a week late, captioned in a font that
-doesn't match the platform's safe-area guide — the caption burn-in was
-templated for a 9:16 frame with TikTok's UI overlay in mind, and nobody
-re-templated it for Shorts.
+Creator folklore holds that TikTok's recommender rewards near-daily
+consistency from an account more than it rewards any single video's quality —
+neither platform publishes the weighting, and independent analyses mostly
+find quality and watch-time swamping raw posting frequency, but the belief is
+widespread enough to shape real behaviour: devotional-slop accounts post on a
+fixed clock rather than "when something good is ready," and the schedule ends
+up upstream of the content, not downstream of it. The same folklore holds
+that YouTube Shorts tolerates burstier patterns; a paid Discord server for a
+niche slop serial wants irregular drops timed to a server event, because that
+audience is buying anticipation, not volume.
+
+:::info[When a pipeline forgets which platform it's on]
+A pipeline built for one platform's cadence and pointed at another without
+adjustment is why you sometimes see the same Halcyon renders reposted to
+YouTube a week late, captioned in a font that doesn't match the platform's
+safe-area guide — the caption burn-in was templated for a 9:16 frame with
+TikTok's UI overlay in mind, and nobody re-templated it for Shorts.
+:::
 
 Template, plus batching, plus a schedule is a production system with its own
 cost structure, and cost structure is an economics argument, not a

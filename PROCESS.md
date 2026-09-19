@@ -1,46 +1,64 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
-
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
-
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+`SLOP2758: AI Slop Cinematography` — a course that treats AI-generated video
+as a genre with its own tells, economics and ethics, and assesses it the way
+a production course should: one analysis piece, then two making pieces that
+get progressively harder to sustain across a full runtime.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+I locked the course design myself first — code, title, the one-idea premise,
+and the three-assessment shape weighted toward making over analysing
+([`f817016`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/f817016))
+— then deliberately did not write the content myself. I planned the full
+12-week topic arc and the invented case studies that would need to recur
+across it, then dispatched five Sonnet subagents in parallel, each with a
+self-contained brief: Studios+Lectures weeks 1–6, Studios+Lectures weeks
+7–12, the three assessments plus policies, People plus the week-1 deck, and
+the home page plus visual system. Splitting by deliverable rather than by
+week meant the two content agents had to coordinate a running set of
+invented specimens (Everline Gadget Reviews, Halcyon Devotional Renders,
+Marlowe Vance) without seeing each other's output until I merged it.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+Verifying that merge was the actual work. Rather than trust each agent's own
+`pnpm check` report, I read every drafted file myself against the CLAUDE.md
+voice guide, checking specifically for the two failure modes a coordinated
+draft is prone to: naming drift (did week 2's new tells continue the week-1
+deck's numbering, or restart it?) and dangling cross-links where one agent's
+`related:` pointed at a slug another agent hadn't created yet. Both checked
+out — week 2 picked up the deck's tell numbering at #6 rather than
+restarting it, and the assessment↔session links for weeks 6/9/12 resolved
+cleanly once the full set landed
+([`98b6fab`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/98b6fab)).
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+I then wrote the mechanically-checkable half of the spec as tests rather
+than judging it by eye — week coverage, assessment weight totals, and the
+locked course code
+([`d319cad`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/d319cad)).
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
+The build tool has no image-generation access, so the slop aesthetic (a
+six-fingered hand, chromatic-aberration ghosting, a two-ink risograph
+palette) had to be depicted rather than generated: hand-authored SVG for the
+hero and card art, kept as a live unrasterized SVG on the hero because
+`OpenGraph.astro` forces a JPEG raster on the card regardless of source
+([`0c77b05`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/0c77b05)).
+That commit also carries the one accessibility decision worth naming: the
+morphing-gradient divider's hue-drift animation is gated behind
+`prefers-reduced-motion`.
 
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
+`pnpm check`'s axe pass and JSDOM build can't see real layout or motion, so
+before committing I ran a headless-Chromium pass by hand at both marking
+viewports (1920×1080 and 390×844) across seven representative pages,
+asserting no horizontal overflow and screenshotting the hero, a deck slide,
+and an assessment page to confirm the effects actually render rather than
+just satisfying a schema. Only after that passed did I stage the verified
+tree, split into commits ordered so each one keeps the course graph free of
+dangling references — assessments landing before the sessions/lectures that
+cite them, the superseded starter briefs deleted only once nothing pointed
+at them any more
+([`e9f9e9b...bf132f5`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/compare/e9f9e9b...bf132f5)).
 
 ## Before you ship
 

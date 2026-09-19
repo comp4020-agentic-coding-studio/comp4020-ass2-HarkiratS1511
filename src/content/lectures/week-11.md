@@ -1,0 +1,67 @@
+---
+title: The director's statement
+description:
+  Authorial intent as a genre convention, the ethics of synthetic
+  performers, and what a festival's disclosure rule actually asks a
+  director to admit
+week: 11
+date: 2027-05-03
+teachers:
+  - marisol-quaye
+related:
+  - sessions/11-directors-statement
+  - week-10
+  - week-12
+---
+
+A director's statement for a piece nobody shot is a strange document, and
+this lecture's argument is that the strangeness is the point rather than a
+problem to explain away. The convention exists in ordinary cinema to launder
+a lot of collaborative, contingent, budget-constrained decision-making into a
+coherent authorial "vision" after the fact — a director's statement is
+rarely a transcript of what actually happened on set, it's a retrospective
+narrative that makes the film's choices sound intended. Slop cinema inherits
+the convention wholesale and needs it more, not less, because the underlying
+process — a prompt cascade, a seed, a batch of two hundred renders culled to
+eight — has even less obvious relationship to "vision" than a conventional
+shoot does. The statement is doing real work: it's the paratext that lets a
+system's output be read as a director's choice.
+
+## When the performer is synthetic
+
+That laundering function gets ethically serious fast once the performer is
+synthetic. Take Marlowe Vance, a fully synthetic lead used across several
+unrelated slop productions over the last two years, built from a voice and
+likeness model whose training data has never been fully disclosed and is
+widely assumed to include a deceased character actor's unlicensed archival
+footage — the tell, for anyone looking, is a blink cadence about four frames
+too slow and too even to be a real eyelid, the same "too-smooth" uncanniness
+this course named in AI voiceover back in week one, just relocated to a face.
+A director's statement that credits "Marlowe Vance" as a performer without
+addressing where that likeness came from is doing exactly the laundering work
+described above, on a subject where laundering is not a neutral rhetorical
+move — it's the difference between an ethical disclosure and a credit that
+quietly implies consent nobody obtained.
+
+## What a disclosure rule actually forces
+
+Festival and distribution frameworks are starting to force the issue
+mechanically rather than trust the statement to volunteer it: a
+synthetic-content disclosure line, required on the submission form rather
+than buried in the statement's third paragraph, exists precisely because the
+genre's paratexts can't be trusted to self-report. The Tri-State Automated
+Media Festival's disclosure rule — a mandatory one-line statement, checked
+for the phrase "synthetic performer" or "synthetic likeness" wherever a
+credited performer wasn't filmed — is a blunt instrument, and directors have
+already learned to satisfy its letter (the phrase appears) while defeating
+its purpose (the statement's own prose still describes Marlowe Vance as if
+cast). A rule that can be satisfied by a keyword is a rule about what has to
+be typed, not what has to be true — the same asymmetry as the review-gate
+blind spots from week 7, where a checkable thing gets checked and the thing
+you actually cared about was something else.
+
+What it means to "direct" something you didn't shoot, then, is the same thing
+it always meant: to take responsibility for a set of decisions someone else
+could name and object to — with the added obligation that when the film's
+lead is a likeness nobody explicitly gave you, the statement has to say so in
+words a reader can't skim past.

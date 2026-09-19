@@ -1,23 +1,83 @@
 ---
-title: Second lecture
+title: The anatomy of a tell
 description:
-  Week 2 — the first substantive material, and the run-up to the first review
+  Extending the deck's five tells with three more, and the mechanics of why
+  each one is the specific shape it is
 week: 2
 date: 2027-03-01
 teachers:
   - idris-fenn
 related:
-  - sessions/02-first-review
-  - assessments/assignment-1
+  - sessions/02-uncanny-tells
+  - week-01
+spec:
+  - names at least three specific visual or audio tells of AI-generated video
+    beyond the five in the week 1 deck, each described mechanically rather
+    than as a vague impression
+  - explains, for at least one tell, why the model produces that specific
+    failure rather than a generic "it's not perfect yet"
 ---
 
-<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
+Week 1's deck gave you five tells: the uncanny hand, the morphing logo, the
+affectless narrator, physics that almost holds, the infinite zoom into
+nothing. All five share a mechanism worth naming explicitly: the model has no
+object permanence, only a frame-by-frame best guess informed by everything
+similar it saw in training, and a tell is the visible seam where that guess
+resets. This lecture adds three more tells to the taxonomy, and asks the
+question the deck left implicit — why *these* failures, and not others.
 
-Replace this page. It exists so the lectures listing sorts by week and the
-related block has more than one edge to draw.
+## Tell #6 — The Overcorrected Smile
 
-## Outline
+Count the teeth. AI-generated grins tend toward too many, too even, and too
+uniformly lit — no gum recession, no slight overlap, no incisor that sits a
+fraction behind its neighbour. The model has seen a hundred thousand dental
+photographs and stock-smile close-ups and almost no candid, badly-lit human
+mouths, so its prior on "smile" converges on the photogenic average rather
+than on any specific person's teeth. A face that's otherwise well-rendered
+will still hand you a smile that reads as a smile from across the room and as
+an orthodontic diagram up close.
 
-- the first substantive material, and where it shows up in practice
-- what the first review is looking for
-- reading before next week
+## Tell #7 — Temporal Identity Drift
+
+A face, a logo, or an object that is subtly not the same object between two
+frames a second apart — not a glitch, a *reassignment*. The earring moves to
+the other ear. The birthmark relocates. Nothing jumps or corrupts the way a
+damaged file would; the model simply re-derives the frame from its prior
+rather than from the frame before it, and the two derivations don't agree.
+This is the tell hardest to point at in a still image, because it only exists
+across time — which is exactly why the specimen shelf insists on links, not
+screenshots.
+
+## Tell #8 — The Too-Smooth Cadence
+
+The affectless narrator (deck, Tell #3) is about *what* the voice fails to
+do — perform stakes. This is about *how*: text-to-speech models trained on
+audiobook and podcast corpora produce speech with no breath sounds between
+clauses, near-constant syllable timing regardless of clause length, and pitch
+contours that rise and fall on a schedule rather than in response to meaning.
+A human reader speeds up when excited and runs out of air on a long sentence.
+The model does neither, because it isn't reading — it's sampling a
+distribution over "narrator voice" that has no lungs to run out of.
+
+## Case study: Radiant Smile Dental Co.
+
+A recurring specimen on past semesters' shelves: a thirty-second ad for a
+dental clinic that does not, as far as anyone has established, exist at the
+address given. The clinic's own logo resolves correctly in the opening shot
+and drifts by the closing shot — three letters becoming a plausible
+four-letter shape that isn't a word (Tell #2). Every patient in the
+before/after montage has Tell #6's smile. The narrator reads "same-day
+appointments available" with the identical rising-then-falling pitch it used
+for "financing options," because the model has no reason to know one clause
+matters more to a listener than the other. None of these three tells alone
+would flag the ad as synthetic to a distracted scroller; stacked, they're the
+whole reason this specimen made it onto the shelf in the first place.
+
+## Why the taxonomy keeps growing
+
+Eight tells now, not five — and next year's cohort will find some of these
+eight fixed and have to name new ones, because each tell is a specific,
+patchable gap between what the training data emphasised and what a viewer
+actually checks. That's the argument for treating this as a taxonomy exercise
+rather than a fixed checklist: the skill this week builds is *how to notice a
+seam*, which outlasts any specific seam this semester happens to catalogue.

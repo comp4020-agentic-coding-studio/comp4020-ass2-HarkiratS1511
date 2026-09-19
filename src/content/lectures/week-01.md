@@ -1,8 +1,8 @@
 ---
-title: Opening lecture
+title: Naming the genre
 description:
-  The first lecture — what the course is, why it is shaped this way, and what
-  happens in week 1
+  Why "slop" is a genre term and not an insult, and what a semester of
+  taking it seriously is supposed to produce
 week: 1
 date: 2027-02-22
 teachers:
@@ -10,21 +10,63 @@ teachers:
 slides: /decks/week-01/
 related:
   - sessions/01-getting-started
+spec:
+  - distinguishes the genre-studies framing of "slop" from a simple quality
+    judgment, and states the difference in one sentence
+  - names a specific, dated origin for the term rather than a vague "people
+    started saying"
 ---
 
-<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
+The deck for this lecture lays out the actual taxonomy — the five tells, the
+claim that a genre is defined by them rather than by its makers' intentions,
+where the semester's three assessments sit against that claim. This page
+covers ground the deck doesn't: where the word came from, and why a course
+gets to treat it as a category worth studying rather than a complaint worth
+making once and moving on.
 
-Replace this page. A lecture entry says what was covered and links to the pages
-that own the detail, so the lecture stays short and nothing is explained twice.
+## Where the word comes from
 
-The `related:` ref above is a graph edge: it renders on this page and on the
-session's, so declare a connection once, on whichever side is convenient.
+"Slop" entered tech and developer commentary as a specific, deliberate
+coinage around 2024, applied to unwanted generative output the way "spam" was
+applied to unwanted email a generation earlier — both words borrow from
+something produced cheaply, in volume, for consumption rather than for
+quality. The analogy is doing real work: nobody calls a bad home movie
+"spam," because spam isn't a judgment about competence, it's a judgment about
+why the thing exists. A hand-drawn ad with a spelling mistake is bad
+craft. A thousand AI-generated ads posted an hour, six-fingered hands
+included, are slop — not because the craft is worse (sometimes it isn't) but
+because the volume-per-unit-of-attention the genre was built to extract is
+the point, and the tells are what's left over when nobody needed to fix them
+to hit that number.
 
-The page renders its `slides:` link automatically. Decks are markdown too,
-under `src/decks/`; the path is part of the lecture's API metadata.
+## What "taking it seriously" means, mechanically
 
-## Outline
+Genre theory has done this move before. Melodrama spent decades dismissed as
+"women's pictures" — over-plotted, over-scored, beneath serious criticism —
+before film scholars did the close-reading work of asking what the
+over-plotting and over-scoring were actually *for*, and found a coherent
+formal system underneath the condescension. This course makes the same bet
+about slop: that six-fingered hands and morphing logos aren't just mistakes
+waiting to be fixed by a better model, but the visible seams of a specific
+economic and technical system, and that system has a formal grammar worth
+teaching the way melodrama's is taught.
 
-- what the course is for
-- how the weeks are shaped
-- what to do before the first session
+Concretely, that means three things every week of this course will ask of
+you, in rotation: name the tell precisely (this week and next), read the
+directorial choices — or their absence — behind it (week 3 onward), and
+follow the money that made producing it at volume worthwhile (week 4). None
+of those three moves is available to someone who's still at the "this all
+just looks fake" stage. Getting past that stage is what week 1 is for.
+
+## Why a course, not a lecture
+
+A single lecture on "AI is making bad videos" would be accurate and useless —
+everyone already believes it, and belief isn't a skill. What doesn't yet
+exist, for most people looking at this content, is the vocabulary to say
+*which* bad, precisely, and the follow-through to ask what that specific
+bad is worth to whoever's making it. That's a semester's worth of practice,
+not an afternoon's worth of opinion, and it's why the course is weighted the
+way it is: one assessment that asks you to diagnose (week 6), two that ask
+you to build the thing you've just learned to diagnose (weeks 9 and 12) —
+because diagnosis without production leaves you certain you'd never make
+this, which is a worse position for understanding it than actually trying.

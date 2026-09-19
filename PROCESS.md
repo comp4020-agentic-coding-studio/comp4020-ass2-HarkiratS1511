@@ -1,71 +1,66 @@
-# Process overview
+# Process
 
-## What I built
+## The bet the course makes
 
-`SLOP2758: AI Slop Cinematography` — a course that treats AI-generated video
-as a genre with its own tells, economics and ethics, and assesses it the way
-a production course should: one analysis piece, then two making pieces that
-get progressively harder to sustain across a full runtime.
-
-## How I got here
-
-I locked the course design myself first — code, title, the one-idea premise,
-and the three-assessment shape weighted toward making over analysing
-([`f817016`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/f817016))
-— then deliberately did not write the content myself. I planned the full
-12-week topic arc and the invented case studies that would need to recur
-across it, then dispatched five Sonnet subagents in parallel, each with a
-self-contained brief: Studios+Lectures weeks 1–6, Studios+Lectures weeks
-7–12, the three assessments plus policies, People plus the week-1 deck, and
-the home page plus visual system. Splitting by deliverable rather than by
-week meant the two content agents had to coordinate a running set of
-invented specimens (Everline Gadget Reviews, Halcyon Devotional Renders,
-Marlowe Vance) without seeing each other's output until I merged it.
-
-Verifying that merge was the actual work. Rather than trust each agent's own
-`pnpm check` report, I read every drafted file myself against the CLAUDE.md
-voice guide, checking specifically for the two failure modes a coordinated
-draft is prone to: naming drift (did week 2's new tells continue the week-1
-deck's numbering, or restart it?) and dangling cross-links where one agent's
-`related:` pointed at a slug another agent hadn't created yet. Both checked
-out — week 2 picked up the deck's tell numbering at #6 rather than
-restarting it, and the assessment↔session links for weeks 6/9/12 resolved
-cleanly once the full set landed
+`SLOP2758: AI Slop Cinematography` treats AI-generated video as a genre with
+its own tells, economics and ethics, taught the way film school teaches
+melodrama — not as twelve unrelated "look how weird this AI clip is"
+examples. That's the actual design decision everything else serves. The
+obvious version of this brief is easier to draft and is exactly the
+generic, content-shaped filler CLAUDE.md calls "AI slop" and tells me to
+reject on sight: a new eye-catching example every week, no cumulative
+vocabulary, a page that could belong to any course with the nouns swapped.
+Committing to one throughline instead meant inventing three specimens that
+had to recur under different lenses — a tell-inventory in week 2, a
+direction-reading in week 3, an economics case in week 4, a genre reading in
+week 5, all four run together against one artefact in week 6's Slop
+Teardown. I checked this compounding held by hand rather than trusting it:
+week 2's tells continue the week-1 deck's own numbering rather than
+restarting it, and the four-lens synthesis in week 6's lecture names
+exactly the four skills the weeks before it built, in order
 ([`98b6fab`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/98b6fab)).
 
-I then wrote the mechanically-checkable half of the spec as tests rather
-than judging it by eye — week coverage, assessment weight totals, and the
-locked course code
+## Why the assessments aren't even thirds
+
+The three assessments are weighted 25/25/50, not 33/33/33, and keep one
+assessment that is pure analysis rather than folding it into the making
+work. The obvious move for a "cinematography" course is to weight
+production highest and cut critical analysis to a token exercise; I kept
+Slop Teardown as a full quarter of the grade because directing convincing
+slop without first building the vocabulary to diagnose it just reproduces
+convention unreflectively. The capstone gets half not because it runs
+longest but because sustained coherence — one story, one visual language,
+one genre held for a full runtime — is the actual hard skill in this genre:
+slop's most reliable tell is a piece that can't sustain its own logic past
+one clip, so that's the thing worth half the grade. That shape is locked in
+`CLAUDE.md`, not just in my head, so a later pass at the assessments can't
+quietly erode it
+([`f817016`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/f817016)).
+
+The schema enforces that one assessment's own marking criteria sum to 100,
+but nothing enforced that the three assessment-level weights (25/25/50)
+summed to 100 across the course — a silent drift to, say, 25/25/60 would
+have passed every existing check. I closed that gap with a test rather than
+trusting a one-time manual add-up
 ([`d319cad`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/d319cad)).
 
-The build tool has no image-generation access, so the slop aesthetic (a
-six-fingered hand, chromatic-aberration ghosting, a two-ink risograph
-palette) had to be depicted rather than generated: hand-authored SVG for the
-hero and card art, kept as a live unrasterized SVG on the hero because
-`OpenGraph.astro` forces a JPEG raster on the card regardless of source
+## Where I chose not to spend effort
+
+The course-graph coherence work — does week 2 still sound like week 2 of
+*this* course, not a generic COMP4020 clone — is judged, not checked; I did
+that read myself after five parallel subagents drafted content, specifically
+because voice drift across twelve weeks is what a per-week agent can't see
+from inside its own slice. I also chose not to re-skin the shared theme: the
+brief treats visual redesign as unweighted against curricular coherence, so
+the only visual work was the hero/card art, and even that was a deliberate
+call rather than a workaround — a course arguing AI slop is dishonest
+shouldn't illustrate itself with generated imagery even where the tooling
+allowed it, so the aesthetic is hand-authored SVG standing in for the genre's
+own tells
 ([`0c77b05`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/commit/0c77b05)).
-That commit also carries the one accessibility decision worth naming: the
-morphing-gradient divider's hue-drift animation is gated behind
-`prefers-reduced-motion`.
 
-`pnpm check`'s axe pass and JSDOM build can't see real layout or motion, so
-before committing I ran a headless-Chromium pass by hand at both marking
-viewports (1920×1080 and 390×844) across seven representative pages,
-asserting no horizontal overflow and screenshotting the hero, a deck slide,
-and an assessment page to confirm the effects actually render rather than
-just satisfying a schema. Only after that passed did I stage the verified
-tree, split into commits ordered so each one keeps the course graph free of
-dangling references — assessments landing before the sessions/lectures that
-cite them, the superseded starter briefs deleted only once nothing pointed
-at them any more
+Before accepting any of it, I re-verified independently rather than trusting
+a subagent's own "checks pass" report: real headless-Chromium screenshots at
+both marking viewports, not just the JSDOM build, and commits staged only
+once each verified phase held
 ([`e9f9e9b...bf132f5`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-HarkiratS1511/compare/e9f9e9b...bf132f5)).
-
-## Before you ship
-
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.

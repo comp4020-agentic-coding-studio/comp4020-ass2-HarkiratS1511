@@ -69,9 +69,13 @@ four-letter shape that isn't a word (Tell #2). Every patient in the
 before/after montage has Tell #6's smile. The narrator reads "same-day
 appointments available" with the identical rising-then-falling pitch it used
 for "financing options," because the model has no reason to know one clause
-matters more to a listener than the other. None of these three tells alone
-would flag the ad as synthetic to a distracted scroller; stacked, they're the
-whole reason this specimen made it onto the shelf in the first place.
+matters more to a listener than the other.
+
+:::tip[Why it made the shelf]
+None of these three tells alone would flag the ad as synthetic to a
+distracted scroller. Stacked, they're the whole reason this specimen made it
+onto the shelf in the first place.
+:::
 
 ## Why the taxonomy keeps growing
 

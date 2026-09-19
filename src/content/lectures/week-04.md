@@ -28,18 +28,22 @@ available, not a general complaint that "platforms reward engagement."
 
 Content farms are not a generative-AI invention. The mid-2000s to early-2010s
 saw a whole industry — Demand Media and its imitators are the textbook
-case — built on paying freelance writers a few dollars per five-hundred-word
-article, keyed to search-engine-optimised titles ("how to remove a stripped
-screw"), at industrial scale, because a single ad-supported pageview paid
-back that per-article cost many times over if enough of them ranked. Nobody
-involved thought "how to remove a stripped screw" was a piece of writing
-worth being proud of. The business case never required it to be — it
-required only that it be cheap enough per unit and good enough per unit to
-clear the search engine's bar, at a volume large enough that the aggregate
-ad revenue dwarfed the aggregate cost. Generative AI didn't invent this
-model. It collapsed the per-unit cost from a few dollars and twenty minutes
-of a freelancer's time to a fraction of a cent and a few seconds of compute,
-which is a difference in degree so large it reads as a difference in kind.
+case — built on paying freelance writers roughly fifteen to thirty dollars
+per few-hundred-word article, keyed to search-engine-optimised titles ("how
+to remove a stripped screw"), at industrial scale, because a single
+ad-supported pageview paid back that per-article cost many times over if
+enough of them ranked. Nobody involved thought "how to remove a stripped
+screw" was a piece of writing worth being proud of. The business case never
+required it to be — it required only that it be cheap enough per unit and
+good enough per unit to clear the search engine's bar, at a volume large
+enough that the aggregate ad revenue dwarfed the aggregate cost.
+
+:::tip[Same model, orders of magnitude cheaper]
+Generative AI didn't invent this. It collapsed the per-unit cost from
+fifteen to thirty dollars and twenty minutes of a freelancer's time to a
+fraction of a cent and a few seconds of compute — a difference in degree so
+large it reads as a difference in kind.
+:::
 
 ## The mechanism, specifically
 
@@ -66,16 +70,20 @@ short-form ad rate that needs on the order of thirty to fifty thousand views
 to recoup that cost before the channel operator has been paid anything at
 all for their time. At the channel's reported posting rate — six videos a
 day — that's a daily cost low enough that a single video clearing half a
-million views once a month covers a month's output outright. The channel
-doesn't need every video to work. It needs the cost of a video that doesn't
-work to be low enough that trying again costs nothing worth stopping for.
-That asymmetry — cheap failure, occasional expensive-feeling success — is
-the actual economic engine, not any specific gadget, script, or voice model.
+million views once a month covers a month's output outright.
+
+:::info[The actual economic engine]
+The channel doesn't need every video to work. It needs the cost of a video
+that doesn't work to be low enough that trying again costs nothing worth
+stopping for — cheap failure, occasional expensive-feeling success, not any
+specific gadget, script, or voice model.
+:::
 
 ## What this explains about the genre
 
-Slop's characteristic volume — the same channel posting dozens of near-
-identical videos a day — isn't an aesthetic choice or a lack of discipline.
+Slop's characteristic volume — the same channel posting dozens of
+near-identical videos a day — isn't an aesthetic choice or a lack of
+discipline.
 It's the rational strategy once the cost of an attempt falls far enough
 below the expected value of a hit, the same strategy a content farm ran on
 freelance articles a decade earlier, at a cost structure that makes today's

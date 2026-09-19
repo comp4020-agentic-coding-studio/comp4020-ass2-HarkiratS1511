@@ -26,18 +26,24 @@ making once and moving on.
 
 ## Where the word comes from
 
-"Slop" entered tech and developer commentary as a specific, deliberate
-coinage around 2024, applied to unwanted generative output the way "spam" was
-applied to unwanted email a generation earlier — both words borrow from
-something produced cheaply, in volume, for consumption rather than for
-quality. The analogy is doing real work: nobody calls a bad home movie
-"spam," because spam isn't a judgment about competence, it's a judgment about
-why the thing exists. A hand-drawn ad with a spelling mistake is bad
-craft. A thousand AI-generated ads posted an hour, six-fingered hands
-included, are slop — not because the craft is worse (sometimes it isn't) but
-because the volume-per-unit-of-attention the genre was built to extract is
-the point, and the tells are what's left over when nobody needed to fix them
-to hit that number.
+"Slop" had circulated as niche developer slang since around 2022, a reaction
+to the first wave of image diffusion models — but it hardened into a
+specific, deliberate term of art and broke into mainstream tech commentary
+around 2024, applied to unwanted generative output the way "spam" was applied
+to unwanted email a generation earlier. Both words borrow from something
+produced cheaply, in volume, for consumption rather than for quality.
+
+:::tip[The analogy is doing real work]
+Nobody calls a bad home movie "spam," because spam isn't a judgment about
+competence — it's a judgment about why the thing exists.
+:::
+
+A hand-drawn ad with a spelling mistake is bad craft. A thousand AI-generated
+ads posted an hour, six-fingered hands included, are slop — not because the
+craft is worse (sometimes it isn't) but because the
+volume-per-unit-of-attention the genre was built to extract is the point, and
+the tells are what's left over when nobody needed to fix them to hit that
+number.
 
 ## What "taking it seriously" means, mechanically
 

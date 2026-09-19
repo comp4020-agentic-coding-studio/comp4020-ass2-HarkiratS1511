@@ -65,11 +65,13 @@ with every continuity detail (wardrobe, prop, lighting direction, time of
 day) copy-pasted verbatim across all six rather than described once and
 trusted to persist. Their footage still drifts — a ring appears on the wrong
 hand in the insert shot in roughly one take in five, by their own account —
-but far less than a crew that varies the wording shot to shot. The method
-isn't a fix for the medium's lack of memory; it's a workaround that trades
-prompt-writing effort for continuity, shot by repetitive shot, which is
-itself a fact about where the labour in this genre actually sits: not in
-performance or blocking, but in redundant, exact re-specification.
+but far less than a crew that varies the wording shot to shot.
+
+:::tip[Where the labour actually sits]
+The method isn't a fix for the medium's lack of memory; it's a workaround
+that trades prompt-writing effort for continuity, shot by repetitive shot —
+not in performance or blocking, but in redundant, exact re-specification.
+:::
 
 ## The actual claim
 

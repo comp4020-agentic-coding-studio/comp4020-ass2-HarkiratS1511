@@ -1,0 +1,125 @@
+<!-- Source art for the social-preview card. See the comment just inside. -->
+<svg
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-hidden="true"
+>
+  <!--
+    Source art for the site's social-preview card
+    (src/assets/images/card.png). Hand-authored, same reasoning as
+    hero-home.svg. Kept as a separate file because the card can't ship as
+    SVG on the live page: astro-theme-university's OpenGraph component
+    always re-encodes a local socialImage to a 1200x630 JPEG (scrapers
+    don't decode AVIF/WebP, and most don't render SVG at all — see
+    README.md's "link-preview card" section), and Astro's own image
+    pipeline refuses to rasterise SVG input without
+    `image.dangerouslyProcessSVG` — a site-wide config flag not worth
+    flipping for one card. So this file is rendered to card.png with
+    `sharp` (already the project's own image toolchain, no model involved)
+    at exactly 1200x630, and card.png is the tracked, referenced asset;
+    this SVG is the source record of how it was made. (Also: keep any long
+    comment after the opening `<svg>` tag, not before it — the same glob
+    that indexes hero-home.svg eagerly imports every file under
+    src/assets/**/*.svg, including this one, and Astro's SVG-metadata probe
+    only scans the first 1KB for that tag.)
+  -->
+  <defs>
+    <radialGradient id="slop-card-glow" cx="72%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#e8a63d" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#b97d1c" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="slop-card-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="1.6" cy="1.6" r="1.6" fill="#f2d9a8" opacity="0.12" />
+    </pattern>
+    <pattern
+      id="slop-card-stripes"
+      width="40"
+      height="40"
+      patternUnits="userSpaceOnUse"
+      patternTransform="rotate(38)"
+    >
+      <rect width="40" height="40" fill="#161311" />
+      <rect width="20" height="40" fill="#b97d1c" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#161311" />
+  <rect width="1200" height="630" fill="url(#slop-card-dots)" />
+  <ellipse cx="900" cy="230" rx="440" ry="360" fill="url(#slop-card-glow)" />
+
+  <!-- chromatic ghosts of the clapperboard -->
+  <g transform="translate(742,330)" opacity="0.36">
+    <rect x="0" y="50" width="300" height="180" rx="8" fill="#5ad1c9" />
+    <polygon points="-8,50 316,50 292,4 20,4" fill="#5ad1c9" />
+  </g>
+  <g transform="translate(762,342)" opacity="0.32">
+    <rect x="0" y="50" width="300" height="180" rx="8" fill="#d1495a" />
+    <polygon points="-8,50 316,50 292,4 20,4" fill="#d1495a" />
+  </g>
+
+  <!-- clapperboard -->
+  <g transform="translate(752,336)">
+    <rect x="0" y="50" width="300" height="180" rx="8" fill="#0d0b0a" stroke="#b97d1c" stroke-width="5" />
+    <polygon
+      points="-8,50 316,50 292,4 20,4"
+      fill="url(#slop-card-stripes)"
+      stroke="#161311"
+      stroke-width="3"
+    />
+    <circle cx="8" cy="50" r="10" fill="#e8a63d" />
+    <g stroke="#b97d1c" stroke-width="4" opacity="0.85" stroke-linecap="round">
+      <line x1="26" y1="102" x2="220" y2="102" />
+      <line x1="26" y1="134" x2="190" y2="134" />
+      <line x1="26" y1="166" x2="230" y2="166" />
+    </g>
+  </g>
+
+  <!-- the six-fingered hand -->
+  <g transform="translate(706,286) rotate(-6)">
+    <g fill="#161311" stroke="#e8a63d" stroke-width="3">
+      <rect x="86" y="0" width="15" height="74" rx="7.5" transform="rotate(-26 93 37)" />
+      <rect x="86" y="-9" width="15" height="86" rx="7.5" transform="rotate(-13 93 34)" />
+      <rect x="86" y="-14" width="15" height="90" rx="7.5" transform="rotate(0 93 31)" />
+      <rect x="86" y="-9" width="15" height="86" rx="7.5" transform="rotate(13 93 34)" />
+      <rect x="86" y="0" width="15" height="74" rx="7.5" transform="rotate(26 93 37)" />
+      <rect x="86" y="10" width="14" height="56" rx="7" transform="rotate(40 93 38)" />
+      <rect x="0" y="23" width="97" height="68" rx="26" />
+    </g>
+  </g>
+
+  <g opacity="0.16" stroke="#f4e5c8" stroke-width="2">
+    <line x1="0" y1="470" x2="1200" y2="470" />
+    <line x1="0" y1="498" x2="1200" y2="498" />
+    <line x1="0" y1="526" x2="1200" y2="526" />
+  </g>
+
+  <!-- course identity, set in the site's fallback stack (rendered once by
+       sharp at build-authoring time, so no live web-font dependency) -->
+  <text
+    x="80"
+    y="200"
+    font-family="'DejaVu Sans', 'Ubuntu Sans', Arial, sans-serif"
+    font-weight="700"
+    font-size="72"
+    fill="#f4e5c8"
+  >SLOP2758</text>
+  <text
+    x="80"
+    y="252"
+    font-family="'DejaVu Sans', 'Ubuntu Sans', Arial, sans-serif"
+    font-weight="400"
+    font-size="34"
+    fill="#d8c19a"
+  >AI Slop Cinematography</text>
+  <text
+    x="80"
+    y="560"
+    font-family="'DejaVu Sans', 'Ubuntu Sans', Arial, sans-serif"
+    font-weight="400"
+    font-size="22"
+    fill="#8a7256"
+  >Slop University</text>
+</svg>

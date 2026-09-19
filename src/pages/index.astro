@@ -2,37 +2,81 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
+import SlopFilters from "../components/SlopFilters.astro";
+import heroImage from "../assets/images/hero-home.svg";
+import "../styles/slop-effects.css";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="A flat gold-and-black clapperboard gripped by a six-fingered hand, its outline duplicated in mismatched colour and dusted with halftone dots, in the two-ink risograph register the department uses for above-the-line credits"
   {...siteConfig}
 >
+  <SlopFilters />
+
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Each week runs a Studio against a Lecture: the Studio has you producing a
+    slop artefact to a brief — a rebrand trailer whose logo cannot hold one
+    shape for four consecutive seconds, a testimonial ad delivered in the
+    too-smooth cadence no real vocal cord produces — while the Lecture
+    supplies the aesthetics, economics or ethics behind why the artefact
+    looks and sounds that way. Assessment mirrors the split but weights it
+    toward making: one close reading of a real slop artefact, one automation
+    pipeline costed out like the business it would actually be, and a
+    capstone slop feature — three to five sustained minutes, one visual
+    language held across every linked cut — backed by a director's statement
+    that argues for the choices, tells included.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    SLOP2758 is a 2000-level course for students who already have a working
+    relationship with at least one generative video or image tool and are
+    ready to stop apologising for it. You should be able to read a prompt
+    template as a script and a workflow diagram as a shot list; the course
+    supplies the film-school vocabulary, not the production basics. What it
+    actually demands is nerve — the willingness to defend the ugliest four
+    seconds of your own footage in front of the class, and the patience to
+    run one pipeline nine times before it stops looking like a festival
+    reject.
   </p>
+
+  <figure class="slop-divider-figure">
+    <svg
+      class="slop-morph-divider slop-displace"
+      viewBox="0 0 800 24"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <linearGradient id="slop-divider-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#b97d1c"></stop>
+          <stop offset="50%" stop-color="#e8a63d"></stop>
+          <stop offset="100%" stop-color="#5ad1c9"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M0,12 C 133,2 266,22 400,12 S 666,2 800,12"
+        stroke="url(#slop-divider-gradient)"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"></path>
+    </svg>
+    <figcaption class="slop-caption">
+      Fig. 1 — a representative artefact, reproduced here at low amplitude
+      for teaching purposes.
+    </figcaption>
+  </figure>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
@@ -64,5 +108,14 @@ import { sessionLabels, siteConfig } from "../site-config";
     color: var(--at-text-secondary);
     background: var(--at-bg-alt);
     font-size: 0.9rem;
+  }
+
+  .slop-divider-figure {
+    margin: 2.5rem 0;
+  }
+
+  .slop-morph-divider {
+    max-width: 28rem;
+    margin-inline: auto;
   }
 </style>

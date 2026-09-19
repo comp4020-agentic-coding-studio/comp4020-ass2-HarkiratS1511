@@ -1,0 +1,100 @@
+/* Hand-authored "AI slop" visual system.
+ *
+ * CLAUDE.md's art-direction rule: this environment has no image-generation
+ * tool, so the slop aesthetic (displacement, chromatic aberration, morphing
+ * gradients) is produced as hand-authored SVG/CSS instead — a curatorial
+ * choice to *depict* slop artefacts' tells, not a substitute for real
+ * artwork. These are named, reusable effect classes, not one-off page
+ * styles: apply them deliberately, as an accent, never across body text a
+ * visitor actually has to read.
+ *
+ * Unlayered on purpose (astro-theme-university's own component overrides
+ * follow the same rule, see its components.css) so these accents aren't
+ * silently outranked by the theme's `@layer at.components` rules.
+ *
+ * `.slop-displace` filters through the shared <filter id="slop-displacement">
+ * defined once in SlopFilters.astro; import that component wherever this
+ * class is used.
+ */
+
+/* Chromatic aberration: a misregistered colour-channel ghost behind display
+ * text, as if the frame's channels decoded a beat apart. Two tight,
+ * low-opacity offset copies rather than a blur, so the real glyph stays the
+ * one thing in focus. */
+.slop-chroma-text {
+  text-shadow:
+    -2px 0 0 rgb(90 209 201 / 55%),
+    2px 0 0 rgb(209 73 90 / 50%);
+}
+
+/* A slight hand-drawn wobble on a decorative edge — the visual equivalent of
+ * a badly-encoded frame. Never apply to text or interactive controls: the
+ * displacement can shift a glyph enough to hurt legibility even at low
+ * amplitude. */
+.slop-displace {
+  filter: url(#slop-displacement);
+}
+
+/* Morphing gradient: a divider whose gradient stops drift hue slowly and
+ * out of phase with each other, so the line never settles on one colour —
+ * a still image's approximation of a slop clip's unstable palette. */
+.slop-morph-divider {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.slop-morph-divider stop {
+  animation: slop-hue-drift 12s ease-in-out infinite alternate;
+}
+
+.slop-morph-divider stop:nth-of-type(2) {
+  animation-delay: -4s;
+}
+
+.slop-morph-divider stop:nth-of-type(3) {
+  animation-delay: -8s;
+}
+
+@keyframes slop-hue-drift {
+  from {
+    stop-color: #b97d1c;
+  }
+
+  to {
+    stop-color: #5ad1c9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slop-morph-divider stop {
+    animation: none;
+  }
+}
+
+/* Deadpan figure caption for a decorative "artefact" — treats the divider as
+ * a cited figure rather than page furniture, matching the course's register. */
+.slop-caption {
+  margin-block-start: 0.5rem;
+  font-size: var(--at-font-size-xs);
+  font-style: italic;
+  color: var(--at-text-muted);
+  text-align: center;
+}
+
+/* Direct application to the theme's hero title. Hero.astro (from
+ * astro-theme-university) renders `.at-hero-title` with no class-extension
+ * hook, so `.slop-chroma-text`'s effect is reapplied here by selector
+ * instead. Astro-theme-university's own components.css sets this element's
+ * `text-shadow` for legibility over the hero photo (a tight dark shadow plus
+ * a soft halo, both required so a long title clears the scrim); those two
+ * layers are carried forward unchanged and the chroma ghosts are added
+ * alongside them, since a single `text-shadow` declaration replaces rather
+ * than merges with the theme's. */
+.at-hero-title {
+  text-shadow:
+    -2px 0 0 rgb(90 209 201 / 55%),
+    2px 0 0 rgb(209 73 90 / 50%),
+    0 1px 2px rgb(0 0 0 / 55%),
+    0 2px 24px rgb(0 0 0 / 45%);
+}

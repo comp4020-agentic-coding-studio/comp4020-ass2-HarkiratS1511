@@ -1,0 +1,101 @@
+<!-- Hand-authored hero art for SLOP2758. See the comment just inside. -->
+<svg
+  width="2560"
+  height="1086"
+  viewBox="0 0 2560 1086"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-hidden="true"
+>
+  <!--
+    This is the course's art-direction stance made literal: no image model
+    touched this file. It is flat-shape SVG in the two-ink risograph register
+    the rest of the site uses, built from a clapperboard (the course's actual
+    subject), plus three deliberate "tells" a slop artefact leaves behind:
+
+      - a six-fingered hand gripping the clapper (the canonical AI-hands tell)
+      - a mistimed chromatic double-exposure of the clapperboard (misregistered
+        colour channels, as if the frame decoded with its planes one tick apart)
+      - a scanline band and a riso-dot halftone standing in for compression
+        noise
+
+    Passed through unrasterised by astro-theme-university's Hero component
+    (see its images.ts / Hero.astro: an SVG heroImage is served as vector,
+    not put through the raster pipeline) so it stays lossless at every
+    viewport. Note for whoever edits this file: Astro's SVG-metadata probe
+    only scans the first 1KB looking for the `<svg ...>` opening tag, so keep
+    any long documentary comment after that tag (as here), not before it.
+  -->
+  <defs>
+    <radialGradient id="slop-hero-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a63d" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#b97d1c" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#b97d1c" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="slop-hero-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="1.6" cy="1.6" r="1.6" fill="#f2d9a8" opacity="0.14" />
+    </pattern>
+    <pattern
+      id="slop-hero-stripes"
+      width="56"
+      height="56"
+      patternUnits="userSpaceOnUse"
+      patternTransform="rotate(38)"
+    >
+      <rect width="56" height="56" fill="#161311" />
+      <rect width="28" height="56" fill="#b97d1c" />
+    </pattern>
+  </defs>
+
+  <rect width="2560" height="1086" fill="#161311" />
+  <rect width="2560" height="1086" fill="url(#slop-hero-dots)" />
+  <ellipse cx="1920" cy="470" rx="860" ry="700" fill="url(#slop-hero-glow)" />
+
+  <!-- misregistered colour-channel ghosts of the clapperboard, offset and
+       under-opaque, as if the frame's planes decoded a beat apart -->
+  <g transform="translate(1486,368)" opacity="0.38" fill="none">
+    <rect x="0" y="86" width="560" height="330" rx="10" fill="#5ad1c9" />
+    <polygon points="-14,86 590,86 546,4 32,4" fill="#5ad1c9" />
+  </g>
+  <g transform="translate(1522,392)" opacity="0.34" fill="none">
+    <rect x="0" y="86" width="560" height="330" rx="10" fill="#d1495a" />
+    <polygon points="-14,86 590,86 546,4 32,4" fill="#d1495a" />
+  </g>
+
+  <!-- the clapperboard itself -->
+  <g transform="translate(1504,380)">
+    <rect x="0" y="86" width="560" height="330" rx="10" fill="#0d0b0a" stroke="#b97d1c" stroke-width="7" />
+    <polygon
+      points="-14,86 590,86 546,4 32,4"
+      fill="url(#slop-hero-stripes)"
+      stroke="#161311"
+      stroke-width="5"
+    />
+    <circle cx="14" cy="86" r="16" fill="#e8a63d" />
+    <g stroke="#b97d1c" stroke-width="7" opacity="0.85" stroke-linecap="round">
+      <line x1="46" y1="176" x2="380" y2="176" />
+      <line x1="46" y1="232" x2="330" y2="232" />
+      <line x1="46" y1="288" x2="400" y2="288" />
+    </g>
+  </g>
+
+  <!-- the six-fingered hand gripping the open clap bar: the tell -->
+  <g transform="translate(1430,300) rotate(-6)">
+    <g fill="#161311" stroke="#e8a63d" stroke-width="5">
+      <rect x="150" y="0" width="26" height="130" rx="13" transform="rotate(-26 163 65)" />
+      <rect x="150" y="-16" width="26" height="150" rx="13" transform="rotate(-13 163 59)" />
+      <rect x="150" y="-24" width="26" height="158" rx="13" transform="rotate(0 163 55)" />
+      <rect x="150" y="-16" width="26" height="150" rx="13" transform="rotate(13 163 59)" />
+      <rect x="150" y="0" width="26" height="130" rx="13" transform="rotate(26 163 65)" />
+      <rect x="150" y="18" width="24" height="98" rx="12" transform="rotate(40 162 67)" />
+      <rect x="0" y="40" width="170" height="120" rx="46" />
+    </g>
+  </g>
+
+  <g opacity="0.14" stroke="#f4e5c8" stroke-width="2">
+    <line x1="0" y1="760" x2="2560" y2="760" />
+    <line x1="0" y1="802" x2="2560" y2="802" />
+    <line x1="0" y1="844" x2="2560" y2="844" />
+    <line x1="0" y1="886" x2="2560" y2="886" />
+  </g>
+</svg>

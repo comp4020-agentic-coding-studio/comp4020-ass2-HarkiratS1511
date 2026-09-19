@@ -10,6 +10,10 @@ email: idris.fenn@slop.university
 contact:
   Ask in the Studio session first — most build problems are faster to show
   than to describe. Email if it genuinely cannot wait until the next one.
+photo: ../../assets/images/people/idris-fenn.jpg
+photoAlt:
+  A studio headshot of a man with a short beard, looking directly at the
+  camera against a plain grey backdrop, wearing a plain white shirt.
 ---
 
 Idris cut reality television before it was fashionable to say a machine could

@@ -11,6 +11,11 @@ contact:
   Email for anything that affects the whole course (deadlines, marking,
   scope). Bring week-to-week questions to the studio session — if it's worth
   asking twice, ask it there first.
+photo: ../../assets/images/people/marisol-quaye.jpg
+photoAlt:
+  A studio portrait of a woman with long dark hair in an oversized black
+  blazer, hands clasped at the lapel, looking directly at the camera against
+  a plain grey backdrop.
 ---
 
 Marisol trained in classical film studies, wrote a dissertation on melodrama's

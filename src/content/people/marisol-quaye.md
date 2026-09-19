@@ -1,21 +1,32 @@
 ---
 title: Marisol Quaye
 description:
-  The founding convenor, responsible for the course's shape and its weekly
-  teaching programme.
+  Founding convenor of SLOP2758. Spent a film-studies career on melodrama
+  before deciding degraded generative video needed the same seriousness and
+  none of the prestige.
 affiliation: Slop University School of Invented Disciplines
 role: convenor
 email: marisol.quaye@slop.university
-contact: Email for course-level questions; use the weekly session for feedback on work.
-photo: ./marisol-quaye.avif
-photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
+contact:
+  Email for anything that affects the whole course (deadlines, marking,
+  scope). Bring week-to-week questions to the studio session — if it's worth
+  asking twice, ask it there first.
 ---
 
-<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+Marisol trained in classical film studies, wrote a dissertation on melodrama's
+formal conventions, and then noticed that nobody was doing the equivalent work
+for six-fingered hands and morphing logos. SLOP2758 is the result: the same
+close-reading habits her supervisors taught her for Douglas Sirk, redirected
+at a genre that didn't ask to be taken seriously and is getting taken
+seriously anyway.
 
-Replace this entry. A people page carries a short bio and whatever a student
-needs in order to contact the right person for the right thing --- and nothing
-that will be stale by week 3.
+Her published work tracks the tells that separate one slop archetype from
+another — the affectless narrator, the too-smooth voiceover cadence, the
+physics that almost holds — and argues, deadpan, that a genre defined by its
+errors is still a genre, with a history, an economics, and a canon. She
+maintains that this is the least embarrassing thing to have specialised in,
+and will defend that position on request.
 
-Consultation hours, contact preferences and the escalation path (who to ask
-first, who to ask when that does not work) are the parts students actually read.
+Office hours run Tuesdays; the sign-up sheet is on the course noticeboard, not
+this page, because rooms change and this page shouldn't need editing every
+time they do.

@@ -2,7 +2,10 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
 import SlopFilters from "../components/SlopFilters.astro";
+import CourseRoadmap from "../components/CourseRoadmap.astro";
+import TellReveal from "../components/TellReveal.astro";
 import heroImage from "../assets/images/hero-home.svg";
 import "../styles/slop-effects.css";
 import { courseMeta } from "../course-config";
@@ -22,29 +25,41 @@ import { sessionLabels, siteConfig } from "../site-config";
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
+  <CourseRoadmap />
+
   <h2>What you will do</h2>
   <p>
-    Each week runs a Studio against a Lecture: the Studio has you producing a
-    slop artefact to a brief — a rebrand trailer whose logo cannot hold one
-    shape for four consecutive seconds, a testimonial ad delivered in the
-    too-smooth cadence no real vocal cord produces — while the Lecture
-    supplies the aesthetics, economics or ethics behind why the artefact
-    looks and sounds that way. Assessment mirrors the split but weights it
-    toward making: one close reading of a real slop artefact, one automation
-    pipeline costed out like the business it would actually be, and a
-    capstone slop feature — three to five sustained minutes, one visual
+    Each week runs a Studio against a Lecture. The Studio has you producing
+    a slop artefact to a brief: a rebrand trailer whose logo cannot hold one
+    shape for four consecutive seconds, say, or a testimonial ad delivered in
+    the too-smooth cadence no real vocal cord produces. The Lecture supplies
+    the aesthetics, economics or ethics behind why the artefact looks and
+    sounds that way. Assessment mirrors the split but weights it toward
+    making. There is one close reading of a real slop artefact, one
+    automation pipeline costed out like the business it would actually be,
+    and a capstone slop feature — three to five sustained minutes, one visual
     language held across every linked cut — backed by a director's statement
     that argues for the choices, tells included.
   </p>
+
+  <TellReveal summary="Spot the tell: Radiant Smile Dental Co.">
+    <p>
+      Its logo resolves correctly in the ad's opening shot and drifts, by the
+      closing one, into a plausible four-letter shape that isn't a word — one
+      of three stacked tells, none of them alone enough to notice on a
+      distracted scroll.{" "}
+      <a href={withBase("/specimens/")}>See the full breakdown, and the other five specimens</a>.
+    </p>
+  </TellReveal>
 
   <h2>Who it is for</h2>
   <p>
     SLOP2758 is a 2000-level course for students who already have a working
     relationship with at least one generative video or image tool and are
     ready to stop apologising for it. You should be able to read a prompt
-    template as a script and a workflow diagram as a shot list; the course
+    template as a script and a workflow diagram as a shot list — the course
     supplies the film-school vocabulary, not the production basics. What it
-    actually demands is nerve — the willingness to defend the ugliest four
+    actually demands is nerve: the willingness to defend the ugliest four
     seconds of your own footage in front of the class, and the patience to
     run one pipeline nine times before it stops looking like a festival
     reject.

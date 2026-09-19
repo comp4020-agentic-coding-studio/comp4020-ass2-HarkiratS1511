@@ -1,0 +1,151 @@
+---
+// A four-act map of the twelve-week sequence, each act keyed to one real
+// photograph and linking straight through to the lectures it groups. Meant
+// to answer "what actually happens in this course" before a visitor has
+// scrolled as far as the syllabus card.
+import { Image } from "astro:assets";
+import { withBase } from "astro-theme-university/url";
+import tellsTaxonomyPhoto from "../assets/images/roadmap/tells-taxonomy.jpg";
+import economicsGenrePhoto from "../assets/images/roadmap/economics-genre.jpg";
+import systemsProductionPhoto from "../assets/images/roadmap/systems-production.jpg";
+import coherenceCapstonePhoto from "../assets/images/roadmap/coherence-capstone.jpg";
+---
+
+<section class="course-roadmap" aria-labelledby="course-roadmap-heading">
+  <h2 id="course-roadmap-heading">Twelve weeks, four acts</h2>
+  <p>
+    The syllabus lists twelve separate lectures, but they resolve into four
+    movements, each closing on a lecture that folds the previous two back
+    together.
+  </p>
+  <ol class="roadmap-grid">
+    <li class="roadmap-act">
+      <a class="roadmap-photo-link" href={withBase("/lectures/week-01/")}>
+        <Image src={tellsTaxonomyPhoto} alt="A coiled strip of film unspooling from a reel against a plain backdrop." width={640} />
+      </a>
+      <h3>Tells &amp; taxonomy</h3>
+      <p class="roadmap-weeks">
+        Weeks 1–3 —{" "}
+        <a href={withBase("/lectures/week-01/")}>naming the genre</a>,{" "}
+        <a href={withBase("/lectures/week-02/")}>the anatomy of a tell</a>, and{" "}
+        <a href={withBase("/lectures/week-03/")}>prompting as direction</a>.
+      </p>
+      <p>
+        The vocabulary the rest of the semester assumes: what counts as slop,
+        how to point at the specific frame that gives it away, and why a
+        prompt is closer to a shot list than a wish.
+      </p>
+    </li>
+    <li class="roadmap-act">
+      <a class="roadmap-photo-link" href={withBase("/lectures/week-04/")}>
+        <Image src={economicsGenrePhoto} alt="A row of server racks in a data centre aisle, cables running overhead." width={640} />
+      </a>
+      <h3>Economics &amp; genre</h3>
+      <p class="roadmap-weeks">
+        Weeks 4–6 —{" "}
+        <a href={withBase("/lectures/week-04/")}>the economics of volume</a>,{" "}
+        <a href={withBase("/lectures/week-05/")}>genre and pastiche</a>, and{" "}
+        <a href={withBase("/lectures/week-06/")}>four lenses, one argument</a>.
+      </p>
+      <p>
+        Why slop gets made at the volume it does, what it's actually
+        imitating, and a synthesis lecture that puts the first five weeks'
+        tools side by side.
+      </p>
+    </li>
+    <li class="roadmap-act">
+      <a class="roadmap-photo-link" href={withBase("/lectures/week-07/")}>
+        <Image src={systemsProductionPhoto} alt="An empty factory sorting line with conveyor rollers and hanging package carriers." width={640} />
+      </a>
+      <h3>Systems &amp; production</h3>
+      <p class="roadmap-weeks">
+        Weeks 7–9 —{" "}
+        <a href={withBase("/lectures/week-07/")}>systems thinking for slop</a>,{" "}
+        <a href={withBase("/lectures/week-08/")}>scheduling and scale</a>, and{" "}
+        <a href={withBase("/lectures/week-09/")}>the business case for slop</a>.
+      </p>
+      <p>
+        The pipeline mechanics behind a single artefact, what changes when
+        you're running hundreds of them on a schedule, and the costing that
+        turns both into a case someone could actually pitch.
+      </p>
+    </li>
+    <li class="roadmap-act">
+      <a class="roadmap-photo-link" href={withBase("/lectures/week-10/")}>
+        <Image src={coherenceCapstonePhoto} alt="A close-up of a video editing timeline on screen, mid-edit, with a silhouetted preview frame above it." width={640} />
+      </a>
+      <h3>Coherence &amp; capstone</h3>
+      <p class="roadmap-weeks">
+        Weeks 10–12 —{" "}
+        <a href={withBase("/lectures/week-10/")}>sustained coherence</a>,{" "}
+        <a href={withBase("/lectures/week-11/")}>the director's statement</a>, and{" "}
+        <a href={withBase("/lectures/week-12/")}>slop as a genre, restated</a>.
+      </p>
+      <p>
+        Holding one visual language across five sustained minutes instead of
+        four seconds, arguing for the choices behind it in writing, and a
+        last lecture that checks the semester's opening claim against
+        everything since.
+      </p>
+    </li>
+  </ol>
+</section>
+
+<style>
+  .course-roadmap {
+    margin-block: 2.5rem;
+  }
+
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--at-spacing-md, 1.5rem);
+    padding: 0;
+    margin: 1.5rem 0 0;
+    list-style: none;
+  }
+
+  .roadmap-act {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--at-border, currentColor);
+    border-radius: var(--at-border-radius, 8px);
+    overflow: hidden;
+    background: var(--at-bg-alt);
+  }
+
+  .roadmap-photo-link {
+    display: block;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+  }
+
+  .roadmap-photo-link :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .roadmap-photo-link:focus-visible {
+    outline: 2px solid var(--at-secondary, currentColor);
+    outline-offset: -2px;
+  }
+
+  .roadmap-act h3 {
+    margin: var(--at-spacing-md, 1rem) var(--at-spacing-md, 1rem) 0;
+  }
+
+  .roadmap-act p {
+    margin: var(--at-spacing-sm, 0.5rem) var(--at-spacing-md, 1rem) 0;
+  }
+
+  .roadmap-act > p:last-child {
+    margin-bottom: var(--at-spacing-md, 1rem);
+  }
+
+  .roadmap-weeks {
+    font-size: var(--at-font-size-xs, 0.85rem);
+    color: var(--at-text-secondary);
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+// Small inline "tell" icons — the recurring, nameable AI-slop artefacts
+// CLAUDE.md's voice guide calls out (six-fingered hands, morphing logos,
+// too-smooth cadences). Hand-authored line art in the same risograph/glitch
+// register as the rest of the visual system: simple and iconographic, meant
+// to sit inline next to a paragraph that already names the tell in words —
+// so the icon is a decorative accent, not an independent source of meaning,
+// and is marked `aria-hidden` accordingly. Uses `currentColor` (plus the
+// theme's own accent token for the one "defect" highlight per icon) so it
+// tracks the surrounding text colour through light/dark and any brand
+// re-theme, rather than hardcoding a colour that could disappear in dark
+// mode.
+interface Props {
+  type: "hand" | "logo" | "teeth" | "blink";
+  /** Rendered width/height in px (square). Defaults to 24 — inline-icon
+   * scale, not illustration scale. */
+  size?: number;
+}
+
+const { type, size = 24 } = Astro.props;
+---
+
+<svg
+  class="slop-tell-icon"
+  width={size}
+  height={size}
+  viewBox="0 0 32 32"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {
+    type === "hand" && (
+      <>
+        {/* Palm, then six fanned fingers — one more than a hand has, spaced
+           evenly so the extra digit reads as a symmetric part of the fan
+           rather than an obvious add-on, the way the real artefact does. */}
+        <rect x="9" y="18" width="14" height="10" rx="5" />
+        <path d="M10 18 L10 9" />
+        <path d="M12.6 18 L12.6 6" />
+        <path d="M15.2 18 L15.2 5" />
+        <path d="M17.8 18 L17.8 5" />
+        <path d="M20.4 18 L20.4 6" />
+        <path d="M23 18 L23 9" />
+      </>
+    )
+  }
+  {
+    type === "logo" && (
+      <>
+        {/* A badge outline holding a wordmark that will not sit still: the
+           same wavy stroke rendered twice, offset and half-opacity, as a
+           small nod to the chromatic-ghost effect used elsewhere. */}
+        <rect x="4" y="8" width="24" height="16" rx="3" />
+        <path
+          d="M7 17 Q9.5 12 12 17 T17 17 T22 17 T25 15"
+          stroke="var(--at-secondary, currentColor)"
+        />
+        <path d="M7.8 15.6 Q10.3 10.6 12.8 15.6 T17.8 15.6 T22.8 15.6 T25.8 13.6" opacity="0.45" />
+      </>
+    )
+  }
+  {
+    type === "teeth" && (
+      <>
+        {/* A smile that closes to a too-neat, too-numerous row rather than
+           the uneven line a real mouth has. */}
+        <path d="M4 12 Q16 21 28 12" />
+        <path d="M5.5 13.4 Q16 20 26.5 13.4" />
+        {Array.from({ length: 9 }).map((_, i) => {
+          const x = 6.5 + i * 2.4;
+          return <path d={`M${x} 13.6 L${x} 18.4`} stroke-width="1.1" />;
+        })}
+      </>
+    )
+  }
+  {
+    type === "blink" && (
+      <>
+        {/* Three sequential frames, filmstrip-style. Real blinks close and
+           reopen gradually across frames; this one snaps shut and back open
+           a beat off cadence, so the middle frame's eye is fully shut
+           between two fully-open ones. */}
+        <rect x="3" y="10" width="7.5" height="12" rx="1" />
+        <rect x="12.25" y="10" width="7.5" height="12" rx="1" />
+        <rect x="21.5" y="10" width="7.5" height="12" rx="1" />
+        <ellipse cx="6.75" cy="16" rx="2.2" ry="1.5" />
+        <circle cx="6.75" cy="16" r="0.5" fill="currentColor" stroke="none" />
+        <path d="M14 16 L18 16" stroke="var(--at-secondary, currentColor)" />
+        <ellipse cx="25.25" cy="16" rx="2.2" ry="1.5" />
+        <circle cx="25.25" cy="16" r="0.5" fill="currentColor" stroke="none" />
+      </>
+    )
+  }
+</svg>

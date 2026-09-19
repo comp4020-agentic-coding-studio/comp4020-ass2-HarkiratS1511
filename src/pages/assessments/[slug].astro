@@ -6,8 +6,10 @@ import SpecList from "astro-course-university/components/SpecList.astro";
 import Callout from "astro-theme-university/components/Callout.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import MarkingModel from "../../components/MarkingModel.astro";
+import SlopFilters from "../../components/SlopFilters.astro";
 import { formatCourseDate } from "../../lib/dates";
 import { graphCollections, siteConfig } from "../../site-config";
+import "../../styles/slop-effects.css";
 
 export async function getStaticPaths() {
   const assessments = await getPublishedCollection("assessments");
@@ -26,6 +28,7 @@ const { Content } = await render(assessment);
   description={assessment.data.description}
   {...siteConfig}
 >
+  <SlopFilters />
   {
     assessment.data.draft && (
       <Callout type="warning">

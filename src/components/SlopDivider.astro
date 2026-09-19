@@ -1,0 +1,76 @@
+---
+// Reusable version of the wavy divider first hand-authored inline on the
+// home page (see git history of src/pages/index.astro). Same visual idea —
+// a `.slop-morph-divider` path filtered through the shared `.slop-displace`
+// turbulence — but parameterised by `variant` so repeated instances (on one
+// page, or across pages) share the family resemblance without being the
+// literal same SVG: the wave's control points and the gradient's hue offset
+// both derive from `variant`, and the gradient gets a per-instance id so
+// multiple dividers on one page don't collide (two <linearGradient>s sharing
+// an id resolve to whichever the browser saw first, silently breaking every
+// instance after it).
+//
+// Import `../styles/slop-effects.css` and render <SlopFilters /> once on any
+// page that uses this component — `.slop-displace` depends on the shared
+// <filter id="slop-displacement"> that component defines.
+interface Props {
+  /** Selects a deterministic wave/hue variant. Any integer; only used mod a
+   * small period, so callers can pass an incrementing counter. Defaults to 0. */
+  variant?: number;
+  /** Figure caption text. Omit to render the divider with no caption. */
+  caption?: string;
+}
+
+const { variant = 0, caption } = Astro.props;
+
+// A small fixed set of hand-picked wave shapes rather than a formula over
+// arbitrary variant values — keeps every variant looking like a deliberate
+// artefact instead of drifting into an uncontrolled, possibly-ugly curve.
+const waves = [
+  "M0,12 C 133,2 266,22 400,12 S 666,2 800,12",
+  "M0,14 C 120,24 240,4 400,10 S 680,20 800,10",
+  "M0,10 C 150,0 250,24 400,14 S 650,0 800,14",
+  "M0,16 C 100,6 300,22 400,8 S 700,18 800,8",
+];
+const path = waves[((variant % waves.length) + waves.length) % waves.length];
+
+// Rotate the palette by variant. Two mechanisms cover the two motion states:
+// - motion allowed: the shared `.slop-morph-divider stop` keyframe animation
+//   (slop-effects.css) already drives `stop-color` every frame, which as a
+//   CSS declaration outranks the SVG `stop-color` attribute below — so the
+//   per-variant shift instead has to happen upstream of that, via the
+//   `--slop-hue-offset` custom property `.slop-displace` reads into its
+//   `filter: hue-rotate(...)`.
+// - `prefers-reduced-motion: reduce`: the animation is disabled and the
+//   static `stop-color` attribute (set per-variant below) takes over, so the
+//   hue still varies between instances even with motion off.
+const hueOffsets = [0, 40, 80, 120];
+const hueOffset = hueOffsets[((variant % hueOffsets.length) + hueOffsets.length) % hueOffsets.length];
+const stopColors = ["#b97d1c", "#e8a63d", "#5ad1c9"].map(
+  (hex) => `oklch(from ${hex} l c calc(h + ${hueOffset}))`,
+);
+
+const gradientId = `slop-divider-gradient-${variant}`;
+---
+
+<figure class="slop-divider-figure">
+  <svg
+    class="slop-morph-divider slop-displace"
+    viewBox="0 0 800 24"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+    style={`--slop-hue-offset: ${hueOffset}deg`}
+  >
+    <defs>
+      <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color={stopColors[0]}></stop>
+        <stop offset="50%" stop-color={stopColors[1]}></stop>
+        <stop offset="100%" stop-color={stopColors[2]}></stop>
+      </linearGradient>
+    </defs>
+    <path d={path} stroke={`url(#${gradientId})`} stroke-width="3" fill="none" stroke-linecap="round"
+    ></path>
+  </svg>
+  {caption && <figcaption class="slop-caption">{caption}</figcaption>}
+</figure>

@@ -15,6 +15,12 @@
  * `.slop-displace` filters through the shared <filter id="slop-displacement">
  * defined once in SlopFilters.astro; import that component wherever this
  * class is used.
+ *
+ * `.slop-displace` also reads a `--slop-hue-offset` custom property (default
+ * 0deg) so a per-instance caller — SlopDivider.astro's `variant` prop — can
+ * rotate its own copy's palette without a second, competing `filter:`
+ * declaration (the property is single-valued, so two rules both setting
+ * `filter` would silently clobber rather than combine).
  */
 
 /* Chromatic aberration: a misregistered colour-channel ghost behind display
@@ -32,7 +38,7 @@
  * displacement can shift a glyph enough to hurt legibility even at low
  * amplitude. */
 .slop-displace {
-  filter: url(#slop-displacement);
+  filter: url(#slop-displacement) hue-rotate(var(--slop-hue-offset, 0deg));
 }
 
 /* Morphing gradient: a divider whose gradient stops drift hue slowly and
@@ -70,6 +76,13 @@
   .slop-morph-divider stop {
     animation: none;
   }
+}
+
+/* Inline "tell" icon (TellIcon.astro) — sits mid-paragraph next to the word
+ * that already names the tell, so it needs baseline alignment rather than
+ * the default inline-svg drop. */
+.slop-tell-icon {
+  vertical-align: -0.3em;
 }
 
 /* Deadpan figure caption for a decorative "artefact" — treats the divider as

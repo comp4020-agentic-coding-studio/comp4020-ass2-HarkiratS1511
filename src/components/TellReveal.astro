@@ -1,0 +1,85 @@
+---
+// A native disclosure widget for "click to see the tell" moments — zero JS,
+// keyboard-operable for free because <details>/<summary> is. The arrow
+// rotation is pure CSS on the [open] attribute, no script anywhere. Meant to
+// wrap the one sentence in a block of prose that names the specific defect,
+// so a reader can skim past six artefacts and only stop to read the tell
+// when they're curious enough to click.
+interface Props {
+  /** The always-visible prompt, e.g. "What's the tell?" */
+  summary: string;
+}
+
+const { summary } = Astro.props;
+---
+
+<details class="tell-reveal">
+  <summary class="tell-reveal-summary">
+    <span class="tell-reveal-arrow" aria-hidden="true"></span>
+    {summary}
+  </summary>
+  <div class="tell-reveal-content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .tell-reveal {
+    margin-block: var(--at-spacing-sm, 0.75rem);
+    border: 1px solid var(--at-border, currentColor);
+    border-radius: var(--at-border-radius, 8px);
+    background: var(--at-bg-alt);
+  }
+
+  .tell-reveal-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--at-spacing-sm, 0.5rem);
+    cursor: pointer;
+    padding: var(--at-spacing-sm, 0.6rem) var(--at-spacing-md, 1rem);
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .tell-reveal-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .tell-reveal-summary:focus-visible {
+    outline: 2px solid var(--at-secondary, currentColor);
+    outline-offset: 2px;
+  }
+
+  .tell-reveal-arrow {
+    display: inline-block;
+    flex: none;
+    width: 0.6em;
+    height: 0.6em;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+  }
+
+  details[open] > .tell-reveal-summary .tell-reveal-arrow {
+    transform: rotate(45deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tell-reveal-arrow {
+      transition: none;
+    }
+  }
+
+  .tell-reveal-content {
+    padding: 0 var(--at-spacing-md, 1rem) var(--at-spacing-md, 1rem);
+  }
+
+  .tell-reveal-content :global(p:first-child) {
+    margin-block-start: 0;
+  }
+
+  .tell-reveal-content :global(p:last-child) {
+    margin-block-end: 0;
+  }
+</style>

@@ -16,11 +16,26 @@
 // defect the case study names, and .slop-displace for the same turbulence
 // filter used everywhere else. Decorative only — the prose beside each
 // still already carries the information — so every still is aria-hidden.
+//
+// Each still is now paired with one real photograph (Unsplash/Pexels,
+// downloaded into src/assets and run through astro:assets) of the genuine
+// thing the invented artefact is parodying — a real dental office, a real
+// small film set, a real unboxing. The pairing is the point: a real photo
+// of a real thing sitting next to an invented artefact demonstrates the
+// course's real-vs-fake argument instead of just asserting it.
+import { Image } from "astro:assets";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
 import SlopFilters from "../../components/SlopFilters.astro";
+import TellReveal from "../../components/TellReveal.astro";
 import "../../styles/slop-effects.css";
 import { siteConfig } from "../../site-config";
+import radiantSmilePhoto from "../../assets/images/specimens/radiant-smile-dental.jpg";
+import brightAperturePhoto from "../../assets/images/specimens/bright-aperture.jpg";
+import everlinePhoto from "../../assets/images/specimens/everline-gadget-reviews.jpg";
+import halcyonPhoto from "../../assets/images/specimens/halcyon-devotional-renders.jpg";
+import nightshadePhoto from "../../assets/images/specimens/nightshade-and-nectar.jpg";
+import marlowePhoto from "../../assets/images/specimens/marlowe-vance.jpg";
 
 // Shared film-strip perforations, reused identically across all six stills
 // so the family resemblance is structural, not incidental — the one thing
@@ -36,44 +51,56 @@ const perfXs = [10, 26, 42, 58, 74, 90, 106, 122, 138];
   <SlopFilters />
 
   <p>
-    A course that argues slop is a genre needs recurring examples, the way a
+    A course arguing slop is a genre needs recurring examples, the way a
     film-studies unit on melodrama keeps returning to the same handful of
-    pictures instead of finding a new one every week. These six are this
-    course's recurring cast: each is invented, each recurs by name across at
-    least two pieces of content, and none is described here beyond what its
-    originating lecture already established. Treat this page as a reference
-    shelf, not new material — if a detail below surprises you, the lecture
-    it links to is wrong, or this page is, and either way it's worth
-    reporting.
+    stills instead of hunting down a fresh one every week. These six are the
+    recurring cast: each invented, each turning up by name in at least two
+    pieces of course content, none embellished past what its originating
+    lecture already established. Read this as a reference shelf, not new
+    material. A photograph sits beside each invented still for contrast, not
+    decoration — the real thing on the left, the specimen it never was on the
+    right. If a detail below surprises you, either the lecture it links to is
+    wrong or this page is, and either way, say something.
   </p>
 
   <div class="specimens">
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* An overcorrected smile: too many, too-even teeth (Tell #6) */}
-        <path d="M32 52 Q80 76 128 52" fill="none" stroke="currentColor" stroke-width="2" />
-        <path d="M36 56 Q80 72 124 56" fill="none" stroke="currentColor" stroke-width="2" />
-        {Array.from({ length: 11 }).map((_, i) => {
-          const x = 38 + i * 8;
-          return <path d={`M${x} 56.5 L${x} 71.5`} stroke="currentColor" stroke-width="1" />;
-        })}
-        {/* The logo, resolving to a plausible non-word by the closing shot (Tell #7) */}
-        <rect x="106" y="14" width="42" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" />
-        <path
-          d="M110 26 Q116 20 122 26 T134 26 T144 23"
-          fill="none"
-          stroke="var(--at-secondary, currentColor)"
-          stroke-width="1.4"
-        />
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* An overcorrected smile: too many, too-even teeth (Tell #6) */}
+          <path d="M32 52 Q80 76 128 52" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M36 56 Q80 72 124 56" fill="none" stroke="currentColor" stroke-width="2" />
+          {Array.from({ length: 11 }).map((_, i) => {
+            const x = 38 + i * 8;
+            return <path d={`M${x} 56.5 L${x} 71.5`} stroke="currentColor" stroke-width="1" />;
+          })}
+          {/* The logo, resolving to a plausible non-word by the closing shot (Tell #7) */}
+          <rect x="106" y="14" width="42" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <path
+            d="M110 26 Q116 20 122 26 T134 26 T144 23"
+            fill="none"
+            stroke="var(--at-secondary, currentColor)"
+            stroke-width="1.4"
+          />
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={radiantSmilePhoto}
+            alt="A bright, empty modern dental clinic room with a reclined dental chair and overhead exam light, no patients or staff present."
+            width={480}
+            height={720}
+          />
+          <figcaption>A real dental office. Radiant Smile Dental Co. is not one.</figcaption>
+        </figure>
+      </div>
       <h2>Radiant Smile Dental Co.</h2>
       <p class="specimen-tag">
         Illustrates Tell #6 (the Overcorrected Smile) and Tell #7 (Temporal
@@ -81,119 +108,177 @@ const perfXs = [10, 26, 42, 58, 74, 90, 106, 122, 138];
         <a href={withBase("/lectures/week-02/")}>Week 2, The anatomy of a tell</a>
       </p>
       <p>
-        A thirty-second ad for a dental clinic that does not, as far as
-        anyone has established, exist at the address given. The clinic's
-        logo resolves correctly in the opening shot and drifts by the
-        closing shot into a plausible four-letter shape that isn't a word.
-        Every patient in the before/after montage has Tell #6's smile, and
-        the narrator reads "same-day appointments available" with the same
-        rising-then-falling pitch it used for "financing options" —
-        stacked, the three tells are why the ad made the shelf at all.
+        Radiant Smile Dental Co. sells a thirty-second spot for a clinic that,
+        as far as anyone has established, does not exist at the address
+        given. Nobody built a waiting room for it. The clinic's own logo
+        resolves correctly in the opening shot and drifts by the closing shot
+        into a plausible four-letter shape that isn't a word, every patient in
+        the before/after montage wears Tell #6's smile, and the narrator
+        delivers "same-day appointments available" in the exact
+        rising-then-falling pitch it used two lines earlier for "financing
+        options" — the model has no way of knowing one of those clauses
+        matters more to a listener than the other.
       </p>
+      <TellReveal summary="What's the tell?">
+        <p>
+          Not any one of the three alone — a distracted scroller would let
+          each pass. Stack the drifting logo, the overcorrected smile, and
+          the pitch that can't distinguish a promise from a price list, and
+          that stacking is the entire reason this ad made the shelf.
+        </p>
+      </TellReveal>
     </article>
 
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* Six fixed shots: wide, two singles, two close-ups, one insert */}
-        {[0, 1, 2].map((col) =>
-          [0, 1].map((row) => (
-            <rect
-              x={16 + col * 44}
-              y={18 + row * 34}
-              width="34"
-              height="24"
-              rx="2"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.4"
-            />
-          )),
-        )}
-        {/* A ring, continuous in the single, relocated to the wrong hand in the insert */}
-        <circle cx="30" cy="60" r="2.4" fill="currentColor" />
-        <circle cx="130" cy="42" r="2.4" fill="var(--at-secondary, currentColor)" />
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* Six fixed shots: wide, two singles, two close-ups, one insert */}
+          {[0, 1, 2].map((col) =>
+            [0, 1].map((row) => (
+              <rect
+                x={16 + col * 44}
+                y={18 + row * 34}
+                width="34"
+                height="24"
+                rx="2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              />
+            )),
+          )}
+          {/* A ring, continuous in the single, relocated to the wrong hand in the insert */}
+          <circle cx="30" cy="60" r="2.4" fill="currentColor" />
+          <circle cx="130" cy="42" r="2.4" fill="var(--at-secondary, currentColor)" />
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={brightAperturePhoto}
+            alt="A small film crew operating a camera on a tripod alongside a lighting rig inside a cozy, real indoor film set."
+            width={480}
+            height={720}
+          />
+          <figcaption>A real crew, on a real set, keeping continuity by hand. Bright Aperture keeps it by copy-paste.</figcaption>
+        </figure>
+      </div>
       <h2>Bright Aperture</h2>
       <p class="specimen-tag">
         Illustrates coverage as the concept that breaks —{" "}
         <a href={withBase("/lectures/week-03/")}>Week 3, Prompting as direction</a>
       </p>
       <p>
-        A small production outfit that generates every scene as exactly six
-        fixed prompts — establishing wide, two singles, two close-ups, one
-        insert — with every continuity detail copy-pasted verbatim across
-        all six rather than described once and trusted to persist. Their
-        footage still drifts: a ring appears on the wrong hand in the
-        insert shot in roughly one take in five, by their own account, far
-        less than a crew that varies the wording shot to shot but not zero.
+        Bright Aperture is a small production outfit with a method instead of
+        a philosophy: generate every scene as exactly six fixed prompts —
+        establishing wide, two singles, two close-ups, one insert — and
+        copy-paste every continuity detail, wardrobe down to time of day,
+        verbatim across all six rather than trust the model to remember what
+        it was just told. It's a workaround for the medium's lack of memory,
+        not a fix for it. Mostly, it works, which is the interesting part.
       </p>
+      <TellReveal summary="What's the tell?">
+        <p>
+          A ring, present and correct in the single, relocated to the wrong
+          hand by the time the insert shot renders — in roughly one take in
+          five, by Bright Aperture's own account. Far fewer errors than a crew
+          that varies its wording shot to shot, but not zero, because
+          "coverage" assumes a continuity this medium doesn't structurally
+          have yet.
+        </p>
+      </TellReveal>
     </article>
 
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* A box, open, never quite sealed at the flaps */}
-        <path
-          d="M50 40 L110 40 L110 78 L50 78 Z M50 40 L38 30 L122 30 L110 40 M38 30 L38 24 M122 30 L122 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-dasharray="4 3"
-        />
-        {/* A play triangle, standing in for a video that documents no real unboxing */}
-        <path d="M72 50 L72 68 L90 59 Z" fill="var(--at-secondary, currentColor)" />
-        <text x="80" y="90" text-anchor="middle" font-size="11" fill="currentColor">$0.02</text>
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* A box, open, never quite sealed at the flaps */}
+          <path
+            d="M50 40 L110 40 L110 78 L50 78 Z M50 40 L38 30 L122 30 L110 40 M38 30 L38 24 M122 30 L122 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-dasharray="4 3"
+          />
+          {/* A play triangle, standing in for a video that documents no real unboxing */}
+          <path d="M72 50 L72 68 L90 59 Z" fill="var(--at-secondary, currentColor)" />
+          <text x="80" y="90" text-anchor="middle" font-size="11" fill="currentColor">$0.02</text>
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={everlinePhoto}
+            alt="A person's hands lifting a smartphone out of its retail box on a table, mid-unboxing."
+            width={480}
+            height={720}
+          />
+          <figcaption>Someone actually unboxing a phone. Everline's version skips the someone.</figcaption>
+        </figure>
+      </div>
       <h2>Everline Gadget Reviews</h2>
       <p class="specimen-tag">
         Illustrates the economics of volume —{" "}
         <a href={withBase("/lectures/week-04/")}>Week 4, The economics of volume</a>
       </p>
       <p>
-        A channel posting AI-generated "unboxing" and demo videos for
-        gadgets that, as far as anyone has checked, were never physically
-        unboxed by anyone. Each video costs, by a rough specimen-shelf
-        estimate, under two dollars in generation compute to produce a
-        finished ninety-second video, against a short-form ad rate that
-        needs on the order of thirty to fifty thousand views to recoup that
-        cost. At six videos a day, a single video clearing half a million
-        views once a month covers a month's output outright.
+        Everline Gadget Reviews posts AI-generated "unboxing" and demo videos
+        for gadgets that, as far as anyone has checked, nobody at Everline has
+        ever physically unboxed. Ninety seconds a video, six videos a day,
+        every day.
       </p>
+      <TellReveal summary="What's the economics?">
+        <p>
+          Each video costs, by a rough specimen-shelf estimate, under two
+          dollars in generation compute. A short-form ad rate needs on the
+          order of thirty to fifty thousand views to recoup that — cheap
+          enough that a single video clearing half a million views once a
+          month covers a month's entire output outright.
+        </p>
+      </TellReveal>
     </article>
 
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* An amber sunset that never varies, over a caption ticker */}
-        <circle cx="80" cy="38" r="14" fill="none" stroke="currentColor" stroke-width="1.6" />
-        <path d="M18 52 L142 52" stroke="currentColor" stroke-width="1.6" />
-        <rect x="30" y="62" width="100" height="5" rx="2.5" fill="currentColor" opacity="0.45" />
-        {/* The line attributed to the wrong book, eleven thousand times */}
-        <rect x="30" y="72" width="70" height="5" rx="2.5" fill="var(--at-secondary, currentColor)" />
-        <rect x="30" y="82" width="88" height="5" rx="2.5" fill="currentColor" opacity="0.45" />
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* An amber sunset that never varies, over a caption ticker */}
+          <circle cx="80" cy="38" r="14" fill="none" stroke="currentColor" stroke-width="1.6" />
+          <path d="M18 52 L142 52" stroke="currentColor" stroke-width="1.6" />
+          <rect x="30" y="62" width="100" height="5" rx="2.5" fill="currentColor" opacity="0.45" />
+          {/* The line attributed to the wrong book, eleven thousand times */}
+          <rect x="30" y="72" width="70" height="5" rx="2.5" fill="var(--at-secondary, currentColor)" />
+          <rect x="30" y="82" width="88" height="5" rx="2.5" fill="currentColor" opacity="0.45" />
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={halcyonPhoto}
+            alt="A silhouetted figure sitting quietly by a calm lake at sunrise, alone, no camera crew or screen in sight."
+            width={480}
+            height={720}
+          />
+          <figcaption>A real sunrise, watched by a real person, once. Halcyon renders eleven an hour.</figcaption>
+        </figure>
+      </div>
       <h2>Halcyon Devotional Renders</h2>
       <p class="specimen-tag">
         Illustrates the pipeline as unit of analysis and the economics that
@@ -203,121 +288,172 @@ const perfXs = [10, 26, 42, 58, 74, 90, 106, 122, 138];
         <a href={withBase("/lectures/week-09/")}>Week 9, The business case for slop</a>
       </p>
       <p>
-        Eleven "quiet reflection" shorts an hour, across four accounts, from
-        a four-stage pipeline: a scraper pulls a verse and a mood tag, an
-        LLM writes a sixty-word reflection, a TTS pass reads it over a stock
-        b-roll prompt, and a moderator glances at a thumbnail grid before
-        the batch posts — built to catch extra fingers, not citations. In
+        Halcyon posts eleven "quiet reflection" shorts an hour, across four
+        accounts, out of a four-stage pipeline: a scraper pulls a verse and a
+        mood tag, an LLM writes a sixty-word reflection, a TTS pass reads it
+        over stock b-roll, and a moderator glances at a thumbnail grid before
+        the batch goes out. That fourth stage is the whole of Halcyon's
+        editorial judgement, and it was built to catch an extra finger in the
+        b-roll — which is exactly the wrong thing to be watching for. In
         March, a batch attributed a verse to the wrong book eleven thousand
-        times before anyone caught it. Week 9's numbers put a render at
-        roughly forty cents of GPU time, a cull rate of one render in
-        twelve, and around eighty finished shorts a day across four
-        accounts — on the order of a thousand renders and four hundred
-        dollars a day to get eighty survivors, against accounts that each
-        sit in the high hundred-thousands of followers.
+        times before anyone caught it, and even then it wasn't the reflection
+        itself that got noticed; it was the correction thread outperforming
+        the original post.
       </p>
+      <p>
+        Run the arithmetic Week 9 hands you and the incentive comes into
+        focus: a render costs roughly forty cents of GPU time, the cull rate
+        keeps one render in twelve, and the four accounts post around eighty
+        survivors a day — a thousand renders and about four hundred dollars,
+        daily, to get there. Halcyon's accounts each sit in the high
+        hundred-thousands of followers. The arithmetic works. It just works
+        by volume, not by care, and only for as long as generation cost keeps
+        falling faster than ad rates do.
+      </p>
+      <TellReveal summary="What's the tell?">
+        <p>
+          Nothing in a single clip — that's the point. Halcyon's failure is
+          pipeline-shaped, not frame-shaped, and a moderator scanning
+          thumbnails for extra fingers will never once glance at a citation.
+        </p>
+      </TellReveal>
     </article>
 
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* Episode one's locked reference face */}
-        <path
-          d="M54 70 Q50 40 66 32 Q80 26 88 36 Q94 44 90 56 Q98 62 92 70 Q86 78 70 78 Q58 78 54 70 Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-        {/* Episode nine's drifted face, offset and dashed */}
-        <path
-          d="M62 74 Q56 46 74 36 Q88 30 96 42 Q102 50 96 60 Q104 66 96 74 Q88 82 74 82 Q64 82 62 74 Z"
-          fill="none"
-          stroke="var(--at-secondary, currentColor)"
-          stroke-width="1.4"
-          stroke-dasharray="3 3"
-          opacity="0.75"
-        />
-        <path d="M18 88 L142 88" stroke="currentColor" stroke-width="1" opacity="0.4" />
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* Episode one's locked reference face */}
+          <path
+            d="M54 70 Q50 40 66 32 Q80 26 88 36 Q94 44 90 56 Q98 62 92 70 Q86 78 70 78 Q58 78 54 70 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+          {/* Episode nine's drifted face, offset and dashed */}
+          <path
+            d="M62 74 Q56 46 74 36 Q88 30 96 42 Q102 50 96 60 Q104 66 96 74 Q88 82 74 82 Q64 82 62 74 Z"
+            fill="none"
+            stroke="var(--at-secondary, currentColor)"
+            stroke-width="1.4"
+            stroke-dasharray="3 3"
+            opacity="0.75"
+          />
+          <path d="M18 88 L142 88" stroke="currentColor" stroke-width="1" opacity="0.4" />
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={nightshadePhoto}
+            alt="A couple embracing beside a lake at golden hour, warm backlight, the same two faces they had a moment ago."
+            width={480}
+            height={720}
+          />
+          <figcaption>Two real people, one real evening. No seed to drift.</figcaption>
+        </figure>
+      </div>
       <h2>Nightshade &amp; Nectar</h2>
       <p class="specimen-tag">
         Illustrates seed drift —{" "}
         <a href={withBase("/lectures/week-10/")}>Week 10, Sustained coherence</a>
       </p>
       <p>
-        A supernatural-romance slop serial posted in twice-weekly two-minute
-        instalments. Episode one locks a reference face, amber-lit, with a
-        recurring line delivered in the same too-smooth cadence every
-        episode; by episode nine the lead's face has drifted enough that
-        long-time viewers comment on it before the plot. Nobody changed the
-        seed on purpose — this is the sustained-coherence version of the
-        six-fingered hand, a slow divergence no single-clip critique would
-        catch, because a single-clip critique only ever sees one clip. The
-        serial's actual visual-language document, as far as it's inferable
-        from the output, seems to be "amber, slow zoom, and the line 'I've
-        been waiting'" — three rules, thin enough that a drifted face still
-        counts as on-brand, because the bible never specified the face.
+        Nightshade &amp; Nectar is a supernatural-romance serial, two minutes
+        twice a week, and its whole visual-language document — as far as it's
+        inferable from nine episodes of output — appears to run to three
+        rules: amber light, a slow zoom, and the line "I've been waiting,"
+        delivered in the same too-smooth cadence every single time. Three
+        rules is thin. Thin enough that by episode nine, the lead's face has
+        drifted far enough from episode one's locked reference that long-time
+        viewers comment on it before the plot does — and nobody changed the
+        seed on purpose.
       </p>
+      <TellReveal summary="What's the tell?">
+        <p>
+          Seed drift: the sustained-coherence version of the six-fingered
+          hand. Not one bad frame, but a slow divergence no single-clip
+          critique would ever catch, because a single-clip critique only ever
+          watches one clip. The bible never specified the face, so a drifted
+          one still counts as on-brand.
+        </p>
+      </TellReveal>
     </article>
 
     <article class="specimen">
-      <svg
-        class="specimen-still slop-displace"
-        viewBox="0 0 160 100"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
-        {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
-        {/* A credited performer, bust and shoulders */}
-        <circle cx="80" cy="34" r="14" fill="none" stroke="currentColor" stroke-width="1.6" />
-        <path d="M56 66 Q80 46 104 66 L104 74 L56 74 Z" fill="none" stroke="currentColor" stroke-width="1.6" />
-        {/* Three sequential blink frames, snapping shut a beat off cadence */}
-        <rect x="18" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
-        <rect x="40" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
-        <rect x="62" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
-        <ellipse cx="27" cy="88" rx="3.4" ry="2.2" fill="none" stroke="currentColor" stroke-width="1" />
-        <path d="M43 88 L55 88" stroke="var(--at-secondary, currentColor)" stroke-width="1.4" />
-        <ellipse cx="71" cy="88" rx="3.4" ry="2.2" fill="none" stroke="currentColor" stroke-width="1" />
-        <path d="M96 84 L138 84 M96 90 L138 90" stroke="currentColor" stroke-width="1" opacity="0.5" />
-      </svg>
+      <div class="specimen-media">
+        <svg
+          class="specimen-still slop-displace"
+          viewBox="0 0 160 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="1" y="1" width="158" height="98" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+          {perfXs.map((x) => <rect x={x} y="5" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {perfXs.map((x) => <rect x={x} y="91" width="6" height="4" fill="currentColor" opacity="0.5" />)}
+          {/* A credited performer, bust and shoulders */}
+          <circle cx="80" cy="34" r="14" fill="none" stroke="currentColor" stroke-width="1.6" />
+          <path d="M56 66 Q80 46 104 66 L104 74 L56 74 Z" fill="none" stroke="currentColor" stroke-width="1.6" />
+          {/* Three sequential blink frames, snapping shut a beat off cadence */}
+          <rect x="18" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <rect x="40" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <rect x="62" y="82" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <ellipse cx="27" cy="88" rx="3.4" ry="2.2" fill="none" stroke="currentColor" stroke-width="1" />
+          <path d="M43 88 L55 88" stroke="var(--at-secondary, currentColor)" stroke-width="1.4" />
+          <ellipse cx="71" cy="88" rx="3.4" ry="2.2" fill="none" stroke="currentColor" stroke-width="1" />
+          <path d="M96 84 L138 84 M96 90 L138 90" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        </svg>
+        <figure class="specimen-photo">
+          <Image
+            src={marlowePhoto}
+            alt="A moody black-and-white studio portrait of a man in quiet contemplation, dramatic side lighting."
+            width={480}
+            height={720}
+          />
+          <figcaption>A real face, held by a real actor, for exactly as long as the shutter was open.</figcaption>
+        </figure>
+      </div>
       <h2>Marlowe Vance</h2>
       <p class="specimen-tag">
         Illustrates synthetic-performer disclosure —{" "}
         <a href={withBase("/lectures/week-11/")}>Week 11, The director's statement</a>
       </p>
       <p>
-        A fully synthetic lead used across several unrelated slop
-        productions over the last two years, built from a voice and
-        likeness model whose training data has never been fully disclosed
-        and is widely assumed to include a deceased character actor's
-        unlicensed archival footage. The tell is the blink: a cadence
-        running about four frames too slow and too even to be a real
-        eyelid, the same too-smooth uncanniness this course named in AI
-        voiceover back in week one, relocated to a face. The fictional
-        Tri-State Automated Media Festival's disclosure rule — a mandatory
-        one-line statement, checked for the phrase "synthetic performer" or
-        "synthetic likeness" — is satisfiable by keyword while the
-        statement's own prose still describes Marlowe Vance as if cast.
+        Marlowe Vance has led several unrelated slop productions over the
+        past two years without once being a person. The voice-and-likeness
+        model behind the name has never had its training data fully
+        disclosed, and is widely assumed to include a deceased character
+        actor's unlicensed archival footage — the sentence a director's
+        statement crediting "Marlowe Vance" as a performer conspicuously
+        never writes.
       </p>
+      <TellReveal summary="What's the tell?">
+        <p>
+          The blink: a cadence running about four frames too slow and too
+          even to be a real eyelid — the same too-smooth uncanniness this
+          course named in AI voiceover back in week one, relocated to a face.
+          The fictional Tri-State Automated Media Festival's disclosure rule
+          checks a submission for the phrase "synthetic performer" or
+          "synthetic likeness" and nothing else, so a statement can satisfy it
+          by keyword while its own prose still describes Marlowe Vance as if
+          cast.
+        </p>
+      </TellReveal>
     </article>
   </div>
 
   <p>
-    Nightshade &amp; Nectar's seed drift and Marlowe Vance both recur once
-    more, side by side, in{" "}
-    <a href={withBase("/lectures/week-12/")}>Week 12's retrospective</a> —
-    one coherence failure anyone could point at, one case this course sat
-    with because the craft had gotten good enough to make the ethics harder,
-    not easier.
+    Nightshade &amp; Nectar's seed drift and Marlowe Vance turn up once more,
+    side by side, in{" "}
+    <a href={withBase("/lectures/week-12/")}>Week 12's retrospective</a>. One
+    is a coherence failure anyone could point at on a bad day. The other is a
+    case this course kept coming back to, because the craft had gotten good
+    enough to make the ethics harder, not easier.
   </p>
 </ContentLayout>
 
@@ -341,11 +477,37 @@ const perfXs = [10, 26, 42, 58, 74, 90, 106, 122, 138];
     font-size: var(--at-font-size-h4, 1.15rem);
   }
 
+  .specimen-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: var(--at-spacing-sm, 0.75rem);
+    align-items: start;
+  }
+
   .specimen-still {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 20rem;
+  }
+
+  .specimen-photo {
+    margin: 0;
+  }
+
+  .specimen-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--at-border-radius, 8px);
+    border: 1px solid var(--at-border, currentColor);
+  }
+
+  .specimen-photo figcaption {
+    margin-block-start: var(--at-spacing-sm, 0.4rem);
+    font-size: var(--at-font-size-xs);
+    color: var(--at-text-secondary);
   }
 
   .specimen-tag {

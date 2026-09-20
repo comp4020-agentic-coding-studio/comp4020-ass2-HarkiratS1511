@@ -44,7 +44,7 @@ lands:
 
 `AI Slop Cinematography` (`SLOP2758`). One idea: AI-generated video is a genre
 with its own tells, economics and ethics, taught the way film school teaches
-melodrama. Weekly "Studio" (hands-on production lab) plus "Lecture"
+melodrama. Weekly "Set" (hands-on production lab) plus "Screening"
 (theory/history/case-study) across 12 weeks. Three assessments, deliberately
 weighted toward making over analysing:
 

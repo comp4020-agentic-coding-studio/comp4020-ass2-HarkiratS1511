@@ -53,5 +53,5 @@ to check for that.
 ## Afterwards
 
 Keep the diagram. Week 8 turns one of its generation steps into an actual
-reusable prompt template, and week 9's studio is supervised time to build the
+reusable prompt template, and week 9's set is supervised time to build the
 rest of it for the Slop Pipeline submission.

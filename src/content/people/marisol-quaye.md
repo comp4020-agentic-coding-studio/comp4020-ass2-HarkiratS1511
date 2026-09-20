@@ -9,7 +9,7 @@ role: convenor
 email: marisol.quaye@slop.university
 contact:
   Email for anything that affects the whole course (deadlines, marking,
-  scope). Bring week-to-week questions to the studio session — if it's worth
+  scope). Bring week-to-week questions to the set session — if it's worth
   asking twice, ask it there first.
 photo: ../../assets/images/people/marisol-quaye.jpg
 photoAlt:

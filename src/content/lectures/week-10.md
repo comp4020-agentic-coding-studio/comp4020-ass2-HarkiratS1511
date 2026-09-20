@@ -51,5 +51,5 @@ failure mode is loud (an actor is visibly unavailable, a set burns down).
 Sustained coherence, in either case, is enforced by a document someone
 actually checks against, not by everyone involved sharing good taste.
 
-This week's studio has you write that document for your own capstone, before
+This week's set has you write that document for your own capstone, before
 the shooting — such as it is — starts.

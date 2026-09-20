@@ -1,7 +1,7 @@
 ---
 title: The shot list exercise
 description:
-  Third studio — translating a one-paragraph scene into a structured prompt
+  Third set — translating a one-paragraph scene into a structured prompt
   sequence, then checking what the model actually did with your blocking
 week: 3
 date: 2027-03-08
@@ -40,7 +40,7 @@ script would use, because that's the vocabulary these models were trained
 against captioned footage that used it too.
 
 **Round two — generate and compare (25 min).** Run your prompts through
-whatever generation tool the studio has access to this week. For each output,
+whatever generation tool the set has access to this week. For each output,
 check it against your blocking: did the character end up on the side of frame
 you specified? Did the second shot's lighting and wardrobe match the first
 one's, or did the model quietly restart the scene from a slightly different

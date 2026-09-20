@@ -1,7 +1,7 @@
 ---
 title: The unit economics worksheet
 description:
-  Fourth studio — costing out two slop archetypes on the same terms, to find
+  Fourth set — costing out two slop archetypes on the same terms, to find
   out which one is actually the better bet and why
 week: 4
 date: 2027-03-15
@@ -24,7 +24,7 @@ related:
 
 ## Before the session
 
-No prep beyond the lecture — bring a calculator or a spreadsheet, whichever
+No prep beyond the screening — bring a calculator or a spreadsheet, whichever
 you think faster in.
 
 ## In the session
@@ -37,13 +37,13 @@ terms.
 
 **Round two — build the worksheet (30 min).** For each archetype, work out:
 generation cost per finished video (render time or API calls, at whatever
-rate the lecture's numbers suggest, times how many attempts it takes to get
+rate the screening's numbers suggest, times how many attempts it takes to get
 one worth posting), a plausible ad revenue rate per thousand views for that
 content's platform and category, and from those two figures a break-even
 view count — how many views one video needs before it's paid for itself.
 Show the arithmetic, not just the answer; a worksheet that skips from
 assumptions to a headline number is exactly the kind of unverifiable claim
-the lecture warns against.
+the screening warns against.
 
 **Round three — compare and defend (15 min).** Trade worksheets with another
 pair. Their job is to find the one assumption in your numbers that, if wrong

@@ -1,7 +1,7 @@
 ---
 title: The genre-fidelity exercise
 description:
-  Fifth studio — committing fully to one slop sub-genre's structural beats,
+  Fifth set — committing fully to one slop sub-genre's structural beats,
   then auditing your own draft against them
 week: 5
 date: 2027-03-22
@@ -23,7 +23,7 @@ related:
 
 ## Before the session
 
-Read the lecture and pick one sub-genre from it — the AI history explainer,
+Read the screening and pick one sub-genre from it — the AI history explainer,
 the product demo nobody filmed, or faith-based inspirational content — before
 you arrive. Come with a rough idea of a specific fake product, historical
 non-event, or devotional theme; you'll build it out in the room.

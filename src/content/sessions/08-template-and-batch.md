@@ -55,5 +55,5 @@ yours could actually sustain without a human touching every post.
 ## Afterwards
 
 Template, cull threshold and scheduling plan are the three pieces the Slop
-Pipeline submission asks for in miniature. Week 9's studio is supervised time
+Pipeline submission asks for in miniature. Week 9's set is supervised time
 to assemble all three into the full pipeline.

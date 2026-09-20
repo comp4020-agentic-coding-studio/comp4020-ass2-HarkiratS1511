@@ -1,8 +1,8 @@
 ---
 title: Tell annotation
 description:
-  Second studio — turning the specimen shelf's rough, unlabelled stacks into
-  timestamped tell-logs, using the vocabulary the lecture just gave you
+  Second set — turning the specimen shelf's rough, unlabelled stacks into
+  timestamped tell-logs, using the vocabulary the screening just gave you
 week: 2
 date: 2027-03-01
 teachers:
@@ -13,7 +13,7 @@ photoAlt:
   atop an open photo album showing a black-and-white photograph
 spec:
   - you produce a timestamped tell-log for at least one specimen, naming at
-    least three distinct tell categories from the lecture
+    least three distinct tell categories from the screening
   - each entry in the log points at a specific frame or timestamp, not a
     general impression
   - you have annotated a specimen you did not bring yourself, and your partner
@@ -26,14 +26,14 @@ related:
 ## Before the session
 
 Nothing to bring — the specimens are already on the shelf from week 1. Read
-the lecture first; you're using its vocabulary today, not inventing your own.
+the screening first; you're using its vocabulary today, not inventing your own.
 
 ## In the session
 
 **Round one — swap and log (30 min).** Pair up and trade specimens. For the
 clip you didn't bring, produce a tell-log: a numbered list of timestamps, each
 naming one specific tell (uncanny hand, morphing logo, temporal flicker, the
-affectless narrator, the too-smooth cadence, or a tell the lecture didn't name
+affectless narrator, the too-smooth cadence, or a tell the screening didn't name
 that you can still describe precisely). "The face looks weird at 0:14" is not
 an entry. "0:14 — the left eyebrow's position resets between two nearly
 identical frames" is.

@@ -1,7 +1,7 @@
 ---
 title: The specimen shelf
 description:
-  First studio — bringing in a real AI-generated video, sorting it by eye
+  First set — bringing in a real AI-generated video, sorting it by eye
   before you have the vocabulary to sort it properly
 week: 1
 date: 2027-02-22
@@ -22,7 +22,7 @@ related:
   - lectures/week-01
 ---
 
-The lecture's last slide asked you to find one AI-generated video already
+The screening's last slide asked you to find one AI-generated video already
 circulating and bring the link. This session is what that homework was for.
 
 ## Before the session
@@ -57,7 +57,7 @@ again in week 9.
 ## Afterwards
 
 Nothing here is marked on craft or on being right about a category — the
-studio is checking that you showed up with a real artefact and can defend, in
+set is checking that you showed up with a real artefact and can defend, in
 one sentence, why it belongs in this course rather than in a general "AI is
 bad" pile. Vague answers ("it just looks fake") get sent back for a sharper
 one on the spot.

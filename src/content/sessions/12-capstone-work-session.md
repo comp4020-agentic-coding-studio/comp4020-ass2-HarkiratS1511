@@ -1,7 +1,7 @@
 ---
 title: Capstone work session
 description:
-  Supervised studio time to finish Direct a Slop Feature and the director's
+  Supervised set time to finish Direct a Slop Feature and the director's
   statement drafted in week 11
 week: 12
 date: 2027-05-10
@@ -25,7 +25,7 @@ related:
   - assessments/direct-a-slop-feature
 ---
 
-Last studio of the semester, and it's work time, not new material: the same
+Last set of the semester, and it's work time, not new material: the same
 three-check-in structure as week 9, timed around finishing rather than
 assembling. Bring the piece in whatever state it's actually in, the story
 bible it's supposed to obey, and the director's statement draft from week 11.

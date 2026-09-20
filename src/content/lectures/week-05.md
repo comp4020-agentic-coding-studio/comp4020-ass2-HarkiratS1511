@@ -28,7 +28,7 @@ a different mechanism entirely — a model converging on whatever structural
 pattern its training captions rewarded most consistently for a given prompt
 category — and it has no awareness that it's quoting anything, no ironic
 distance, no audience assumed to be in on it. Same structural echo, opposite
-authorship. That difference is the actual argument this lecture is making,
+authorship. That difference is the actual argument this screening is making,
 not a claim that one version is more "genuine" than the other.
 
 ## Three sub-genres, three conventions each
@@ -77,7 +77,7 @@ human pasticheur would also hit on purpose.
 
 ## What this sets up for week 6
 
-Naming a genre's conventions from the inside — as this week's studio makes
+Naming a genre's conventions from the inside — as this week's set makes
 you do, by trying to reproduce them — is the same skill the Slop Teardown
 needs run in the other direction: given a finished artefact, name which
 genre it's quoting, and whether anyone home decided to.

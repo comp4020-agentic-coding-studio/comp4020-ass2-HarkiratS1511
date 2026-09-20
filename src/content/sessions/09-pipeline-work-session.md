@@ -1,7 +1,7 @@
 ---
 title: Pipeline work session
 description:
-  Supervised studio time to assemble the Slop Pipeline submission from the
+  Supervised set time to assemble the Slop Pipeline submission from the
   template, batching rule and schedule built in weeks 7 and 8
 week: 9
 date: 2027-04-19
@@ -23,7 +23,7 @@ related:
   - assessments/slop-pipeline
 ---
 
-No new material this week — the studio is work time, timetabled around three
+No new material this week — the set is work time, timetabled around three
 fifteen-minute check-in slots (early, midpoint, last-call) rather than a
 single demo at the end, because a pipeline that looks finished at minute ten
 of a check-in and breaks under questioning is exactly the failure mode the

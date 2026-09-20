@@ -58,4 +58,4 @@ TikTok's UI overlay in mind, and nobody re-templated it for Shorts.
 Template, plus batching, plus a schedule is a production system with its own
 cost structure, and cost structure is an economics argument, not a
 filmmaking one. That's the case week 9 makes explicitly, using the numbers
-this week's studio generates.
+this week's set generates.

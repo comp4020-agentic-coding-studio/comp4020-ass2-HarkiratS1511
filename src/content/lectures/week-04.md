@@ -23,7 +23,7 @@ Nobody sets out to make a worse video. Slop is what a system produces when
 the return on a video is measured in views-per-dollar-of-production-time
 rather than in quality-per-video, and enough of the internet's attention is
 sold by the thousand views that this measurement wins whenever it's
-available. This lecture is about the specific machinery that makes it
+available. This screening is about the specific machinery that makes it
 available, not a general complaint that "platforms reward engagement."
 
 ## The pre-AI precedent

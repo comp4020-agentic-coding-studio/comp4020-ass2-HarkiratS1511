@@ -1,7 +1,7 @@
 ---
 title: Teardown work session
 description:
-  Supervised studio time and structured peer critique for the Slop Teardown,
+  Supervised set time and structured peer critique for the Slop Teardown,
   due this week — no new production exercise
 week: 6
 date: 2027-03-29
@@ -15,7 +15,7 @@ spec:
   - each student presents a draft artefact and tell-inventory to a small
     group and receives structured feedback against a fixed checklist before
     submission
-  - the studio time is spent revising the Slop Teardown, not on a new
+  - the set time is spent revising the Slop Teardown, not on a new
     production exercise, consistent with week 6 being the course's one
     deliberate analysis week
 related:
@@ -24,7 +24,7 @@ related:
   - 05-genre-and-pastiche
 ---
 
-No new material this week. The studio is work time, structured around peer
+No new material this week. The set is work time, structured around peer
 critique circles rather than a demo, because a teardown's weaknesses — a
 vague tell, an unfollowed money trail, an unnamed audience — surface faster
 under a stranger's questions than under your own re-reading.
@@ -56,7 +56,7 @@ opinions on your artefact choice.
 
 ## Afterwards
 
-Submit the Slop Teardown. There is no studio exercise to carry forward from
+Submit the Slop Teardown. There is no set exercise to carry forward from
 this week the way other weeks carry a shot list or a worksheet forward — the
 deliberate point of week 6 is that the only thing produced this week is the
 argument itself.

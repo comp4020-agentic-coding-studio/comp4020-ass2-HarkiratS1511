@@ -48,7 +48,7 @@ characteristic tells (the six-fingered hand that ships, the logo that resolves
 differently in frame 40 than frame 4) are failures of review design, not
 failures of the model.
 
-This week's studio treats your Slop Teardown artefact the same way: not
+This week's set treats your Slop Teardown artefact the same way: not
 "what's wrong with this video" but "what system produces videos with this
 shape of wrong, reliably, on a schedule." Week 8 turns one stage of that
 system into something you can actually reuse.

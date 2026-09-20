@@ -52,6 +52,6 @@ discloses something.
 ## Afterwards
 
 Bring both to week 12. The capstone work session assumes the statement
-exists in draft, because the last week of studio time is for finishing the
+exists in draft, because the last week of set time is for finishing the
 piece the statement describes, not for starting to think about what it
 means.

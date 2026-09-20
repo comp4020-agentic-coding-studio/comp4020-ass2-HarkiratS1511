@@ -21,8 +21,8 @@ spec:
 ---
 
 Five weeks in, you have four distinct analytical tools, built in a specific
-order for a reason, and this lecture's only job is to name them together
-before you spend the studio hour using all four on one artefact of your own
+order for a reason, and this screening's only job is to name them together
+before you spend the set hour using all four on one artefact of your own
 choosing. None of these lenses is optional for a strong Slop Teardown — a
 teardown that only uses one of them reads as a list, not an argument.
 

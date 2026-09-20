@@ -16,7 +16,7 @@ related:
   - assessments/slop-pipeline
 ---
 
-This is the lecture the last two weeks were building toward, and it has one
+This is the screening the last two weeks were building toward, and it has one
 argument: slop is a genre defined by its economics before it's defined by its
 aesthetics, and the economics only becomes visible at the batch level, not
 the clip level.

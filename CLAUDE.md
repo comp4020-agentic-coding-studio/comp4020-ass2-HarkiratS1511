@@ -13,6 +13,10 @@ the rules this course's build has actually needed.
 
 ## How to work in here
 
+- Decisions here are made on merit, never on how much of the deadline is
+  left. If time runs short, cut scope --- skip a pass, drop a nice-to-have ---
+  never lower the bar on whatever is kept in. A rushed-looking page is a
+  worse outcome than a missing one.
 - Keep the dev server running (`pnpm dev`) so you see changes as you make them.
 - Run `pnpm check` before you push. Never commit a red state.
 - Content collections have strict schemas: a bad frontmatter key or a dangling
@@ -90,15 +94,23 @@ image that could pass as one of the course's own invented artefacts.
 
 ## Orchestration workflow
 
-Content and code for this build are drafted by dispatched subagents working
-from this file's voice guide, never accepted on their own report:
+I act as orchestrator, not author. Every change to this repo --- content,
+code, or configuration, no matter how small --- is drafted by a dispatched
+subagent working from this file's voice guide, never written by me directly
+and never accepted on its own report:
 
 - Course-wide coherence (the actual brief) is checked by reading all content
   together, by me, after subagents draft it --- not delegated, because voice
-  drift across 12 weeks is exactly what a per-week subagent can't see.
+  drift across 12 weeks is exactly what a per-week subagent can't see. This
+  is the one judgement subagents don't make; they draft, I judge.
 - A subagent reporting "pnpm check green" is necessary, not sufficient (see
-  Assignment 1 below) --- independent re-verification, including looking at
-  real screenshots, happens before anything is committed.
+  Assignment 1 below) --- independent re-verification, including reading the
+  actual diff and looking at real screenshots, happens before anything is
+  committed.
+- This rule was adopted partway through the build (2026-09-20). Earlier
+  commits in this repo's history predate it and were written directly ---
+  named here rather than quietly retconned, because an honest process record
+  is the point of `PROCESS.md` existing at all.
 
 ## PROCESS.md carries 45% of the grade
 

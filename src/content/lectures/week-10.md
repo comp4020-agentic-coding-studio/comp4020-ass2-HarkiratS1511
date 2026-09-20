@@ -7,6 +7,7 @@ week: 10
 date: 2027-04-26
 teachers:
   - idris-fenn
+slides: /decks/week-10/
 photo: ../../assets/images/weeks/week-10.jpg
 photoAlt: An investigation board with photos, maps and string connecting them
 related:

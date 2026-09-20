@@ -1,0 +1,210 @@
+---
+// The whole semester as one table: each week's Screening and Set, joined by
+// `data.week`, plus whichever assessment falls due that week. The four acts
+// match src/components/CourseRoadmap.astro exactly (same keys, week ranges,
+// and names) so this page and the home-page roadmap describe the same
+// course. Filtering is pure CSS — a radio per act plus one for "assessment
+// weeks", each :checked state hiding non-matching rows via :has() on the
+// wrapper — no <script> anywhere, matching the rest of this repo.
+import { getPublishedCollection } from "astro-course-university/content";
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { formatCourseDate } from "../../lib/dates";
+import { siteConfig } from "../../site-config";
+
+const lectures = await getPublishedCollection("lectures");
+const sessions = await getPublishedCollection("sessions");
+const assessments = await getPublishedCollection("assessments");
+
+const sessionsByWeek = new Map(sessions.map((session) => [session.data.week, session]));
+const assessmentsByWeek = new Map(
+  assessments.map((assessment) => [assessment.data.week, assessment]),
+);
+
+interface Act {
+  key: string;
+  name: string;
+  weeks: number[];
+}
+
+// Same four acts, same week groupings and names as CourseRoadmap.astro.
+const acts: Act[] = [
+  { key: "tells-taxonomy", name: "Tells & taxonomy", weeks: [1, 2, 3] },
+  { key: "economics-genre", name: "Economics & genre", weeks: [4, 5, 6] },
+  { key: "systems-production", name: "Systems & production", weeks: [7, 8, 9] },
+  { key: "coherence-capstone", name: "Coherence & capstone", weeks: [10, 11, 12] },
+];
+
+function actForWeek(week: number): Act {
+  const act = acts.find((candidate) => candidate.weeks.includes(week));
+  if (!act) throw new Error(`no act covers week ${week}`);
+  return act;
+}
+
+const rows = lectures
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .map((lecture) => ({
+    week: lecture.data.week,
+    date: lecture.data.date,
+    lecture,
+    session: sessionsByWeek.get(lecture.data.week),
+    assessment: assessmentsByWeek.get(lecture.data.week),
+    act: actForWeek(lecture.data.week),
+  }));
+---
+
+<ContentLayout
+  title="Schedule"
+  description="Every Screening, Set and assessment due date, joined into one table by week."
+  {...siteConfig}
+>
+  <p>
+    Every week runs one Screening and one Set; three of those weeks also
+    carry an assessment. This table lays out all twelve in order, with each
+    week tagged to the act it belongs to — the same four acts described on
+    the home page's roadmap — so it can be filtered down to one movement of
+    the course, or to just the weeks with something due.
+  </p>
+
+  <div class="schedule-wrap">
+    <fieldset class="schedule-filter">
+      <legend class="sr-only">Filter the schedule</legend>
+      <input class="sr-only" type="radio" id="filter-all" name="schedule-filter" checked />
+      <label class="at-button at-button--outline" for="filter-all">All weeks</label>
+      {
+        acts.map((act) => (
+          <>
+            <input class="sr-only" type="radio" id={`filter-${act.key}`} name="schedule-filter" />
+            <label class="at-button at-button--outline" for={`filter-${act.key}`}>
+              {act.name}
+            </label>
+          </>
+        ))
+      }
+      <input class="sr-only" type="radio" id="filter-assessments" name="schedule-filter" />
+      <label class="at-button at-button--outline" for="filter-assessments">
+        Assessment weeks
+      </label>
+    </fieldset>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Week</th>
+          <th scope="col">Date</th>
+          <th scope="col">Screening</th>
+          <th scope="col">Set</th>
+          <th scope="col">Due</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((row) => (
+            <tr data-act={row.act.key} {...(row.assessment ? { "data-has-due": "" } : {})}>
+              <td>{row.week}</td>
+              <td>{formatCourseDate(row.date)}</td>
+              <td>
+                <a href={withBase(`/lectures/${row.lecture.id}/`)}>{row.lecture.data.title}</a>
+              </td>
+              <td>
+                {row.session && (
+                  <a href={withBase(`/sessions/${row.session.id}/`)}>{row.session.data.title}</a>
+                )}
+              </td>
+              <td>
+                {row.assessment && (
+                  <a class="schedule-due" href={withBase(`/assessments/${row.assessment.id}/`)}>
+                    {row.assessment.data.title} — {row.assessment.data.weight}%
+                  </a>
+                )}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</ContentLayout>
+
+<style>
+  .schedule-wrap {
+    margin-block: 2rem;
+  }
+
+  .schedule-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--at-spacing-sm, 0.5rem);
+    margin: 0 0 var(--at-spacing-md, 1.5rem);
+    padding: 0;
+    border: none;
+  }
+
+  /* Visually hidden, not display:none — the radios stay focusable and
+     operable by keyboard and assistive tech; only their paired label is
+     seen, and its :checked styling below carries the visible state. */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .schedule-filter input:checked + label {
+    background: var(--at-accent);
+    color: var(--at-on-accent);
+  }
+
+  .schedule-filter input:focus-visible + label {
+    outline: 2px solid var(--at-secondary, currentColor);
+    outline-offset: 2px;
+  }
+
+  .schedule-due {
+    display: inline-block;
+    padding: var(--at-spacing-xs, 0.2rem) var(--at-spacing-sm, 0.5rem);
+    border-radius: var(--at-border-radius, 999px);
+    background: var(--at-accent-soft);
+    color: var(--at-accent);
+    font-size: var(--at-font-size-xs, 0.85rem);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .schedule-due:hover {
+    text-decoration: underline;
+  }
+
+  /* Zero-JS filtering: a wrapper-level :has() check on each radio's
+     :checked state hides the table rows that don't match it. "All weeks"
+     needs no rule — when it's checked, none of the ids below are, so no
+     row is hidden. */
+  .schedule-wrap:has(#filter-tells-taxonomy:checked) tbody tr:not([data-act="tells-taxonomy"]) {
+    display: none;
+  }
+
+  .schedule-wrap:has(#filter-economics-genre:checked) tbody tr:not([data-act="economics-genre"]) {
+    display: none;
+  }
+
+  .schedule-wrap:has(#filter-systems-production:checked)
+    tbody
+    tr:not([data-act="systems-production"]) {
+    display: none;
+  }
+
+  .schedule-wrap:has(#filter-coherence-capstone:checked)
+    tbody
+    tr:not([data-act="coherence-capstone"]) {
+    display: none;
+  }
+
+  .schedule-wrap:has(#filter-assessments:checked) tbody tr:not([data-has-due]) {
+    display: none;
+  }
+</style>

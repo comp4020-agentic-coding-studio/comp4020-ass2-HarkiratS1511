@@ -13,12 +13,6 @@ photoAlt: A stack of vintage box-style television sets
 related:
   - sessions/05-genre-and-pastiche
   - week-04
-spec:
-  - names at least three specific slop sub-genres, each with a concrete
-    example of its structural conventions
-  - distinguishes AI genre pastiche from deliberate authorial pastiche in
-    cinema by naming the actual mechanical difference, not just asserting
-    one is "less genuine"
 ---
 
 Pastiche in cinema is usually a deliberate authorial act: a director who

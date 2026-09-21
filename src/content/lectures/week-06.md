@@ -14,11 +14,6 @@ related:
   - sessions/06-teardown-work-session
   - week-05
   - assessments/slop-teardown
-spec:
-  - names all four analytical lenses built across weeks 2 to 5 (tells,
-    direction, economics, genre) and states what each one specifically
-    contributes to a teardown, rather than treating "analysis" as one
-    undifferentiated skill
 ---
 
 Five weeks in, you have four distinct analytical tools, built in a specific

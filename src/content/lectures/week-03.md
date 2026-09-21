@@ -13,12 +13,6 @@ photoAlt: A director reviewing footage on a monitor
 related:
   - sessions/03-prompting-as-direction
   - week-02
-spec:
-  - names at least two specific pieces of film-directing vocabulary (shot
-    type, camera move, blocking, coverage) and explains what each one
-    controls when written into a prompt
-  - states one specific limit of prompting-as-direction that a human director
-    does not face on set
 ---
 
 Text-to-video generation systems increasingly document their own prompting

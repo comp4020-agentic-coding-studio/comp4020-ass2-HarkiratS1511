@@ -12,11 +12,6 @@ photoAlt: An IT technician working among server racks in a data centre
 related:
   - sessions/04-economics-of-volume
   - week-03
-spec:
-  - names a specific pre-AI precedent for volume-over-craft content economics
-  - explains the specific mechanism by which a platform's ranking or ad
-    system rewards volume, rather than restating "the algorithm favours
-    engagement" without a mechanism
 ---
 
 Nobody sets out to make a worse video. Slop is what a system produces when
